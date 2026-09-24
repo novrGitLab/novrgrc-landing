@@ -1,12 +1,5 @@
 import { useState, useEffect } from 'react'
 
-const providers = [
-  { name: 'Tier 1 — Major service provider', pct: 78 },
-  { name: 'Tier 2 — Regional operator', pct: 64 },
-  { name: 'Tier 2 — Cloud platform', pct: 82 },
-  { name: 'Tier 3 — Enterprise provider', pct: 58 },
-]
-
 const outcomes = [
   'Single source of truth across service provider and sector levels.',
   'Less time spent on compliance reporting.',
@@ -385,13 +378,11 @@ export default function App() {
               <div><span className="check solid">✓</span>Less time spent collating reports from entities.</div>
               <div><span className="check solid">✓</span>The regulator’s own CSIRT can run its GRC work here too.</div>
             </div>
-            <div className="browser">
-              <div className="browser-bar"><span className="dot" /><span className="dot" /><span className="dot" /></div>
-              <div style={{ padding: 16 }} className="grid5">
-                {Array.from({ length: 10 }).map((_, i) => <div key={i} className={`cell ${['g1', 'g2', 'g3', 'g4'][i % 4]}`} />)}
-              </div>
-              <div style={{ padding: '0 16px 16px', display: 'flex', gap: 8 }}>
-                {['Tier 1', 'Tier 2', 'Tier 3'].map(t => <span key={t} className="chip">{t}</span>)}
+            <div className="browser" style={{ overflow: 'hidden', boxShadow: '0 22px 48px -18px rgba(16,24,40,.22), 0 8px 20px -12px rgba(16,24,40,.14)', border: '1px solid #DDE1E8', borderRadius: 16 }}>
+              <div className="browser-bar" style={{ background: '#F1F3F6', borderBottom: '1px solid #DDE1E8' }}><span className="dot" style={{ background: '#FF5F57' }} /><span className="dot" style={{ background: '#FFBD2E' }} /><span className="dot" style={{ background: '#28CA42' }} /><span style={{ marginLeft: 12, fontSize: 11, color: '#6B7688', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>app.novrgrc.com/sector-overview — NCC regulator view</span></div>
+              <div onClick={() => setLightbox('/ncc-dashboard.png')} style={{ position: 'relative', cursor: 'zoom-in', overflow: 'hidden', background: '#F8FAFC', aspectRatio: '16/10.2' }}>
+                <img src="/ncc-dashboard.png" alt="NCC Sector overview — regulator view (Image 1)" style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover', objectPosition: 'top left', imageRendering: '-webkit-optimize-contrast', transition: 'transform .45s ease' }} loading="lazy" onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+                <span style={{ position: 'absolute', right: 10, bottom: 10, background: 'rgba(14,21,38,.78)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '5px 9px', borderRadius: 999, backdropFilter: 'blur(6px)', pointerEvents: 'none' }}>Expand ↗</span>
               </div>
             </div>
           </div>
@@ -404,14 +395,11 @@ export default function App() {
               <div><span className="check solid">✓</span>Better audit readiness, year round.</div>
               <div><span className="check solid">✓</span>Return on investment within 12–18 months <span className="chip green" style={{ marginLeft: 6 }}>Target</span></div>
             </div>
-            <div className="browser">
-              <div className="browser-bar"><span className="dot" /><span className="dot" /><span className="dot" /></div>
-              <div style={{ padding: '8px 14px' }}>
-                {['Risk register up to date', 'Controls tested this cycle', 'Evidence collected', 'Attestation submitted', 'Findings closed', 'Report generated'].map(t => (
-                  <div key={t} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--line)', fontSize: 12 }}>
-                    <span style={{ fontWeight: 600 }}>{t}</span><span className="chip green">Done</span>
-                  </div>
-                ))}
+            <div className="browser" style={{ overflow: 'hidden', boxShadow: '0 22px 48px -18px rgba(16,24,40,.22), 0 8px 20px -12px rgba(16,24,40,.14)', border: '1px solid #DDE1E8', borderRadius: 16 }}>
+              <div className="browser-bar" style={{ background: '#F1F3F6', borderBottom: '1px solid #DDE1E8' }}><span className="dot" style={{ background: '#FF5F57' }} /><span className="dot" style={{ background: '#FFBD2E' }} /><span className="dot" style={{ background: '#28CA42' }} /><span style={{ marginLeft: 12, fontSize: 11, color: '#6B7688', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>app.novrgrc.com/dashboard — Service provider view</span></div>
+              <div onClick={() => setLightbox('/dashboard.png')} style={{ position: 'relative', cursor: 'zoom-in', overflow: 'hidden', background: '#F8FAFC', aspectRatio: '16/10.2' }}>
+                <img src="/dashboard.png" alt="Service provider dashboard" style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover', objectPosition: 'top left', imageRendering: '-webkit-optimize-contrast', transition: 'transform .45s ease' }} loading="lazy" onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+                <span style={{ position: 'absolute', right: 10, bottom: 10, background: 'rgba(14,21,38,.78)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '5px 9px', borderRadius: 999, backdropFilter: 'blur(6px)', pointerEvents: 'none' }}>Expand ↗</span>
               </div>
             </div>
           </div>
@@ -465,6 +453,7 @@ export default function App() {
             </div>
           ))}
         </div>
+
       </section>
 
       <section className="section">
@@ -537,6 +526,9 @@ export default function App() {
             <div>
               <h3>NovrGRC</h3>
               <div>By CyberNovr Limited</div>
+              <a href="https://cybernovr.com/isms" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001 Certified — cybernovr.com/isms" style={{ display: 'block', marginTop: 16 }}>
+                <img src="/iso/iso-27001.webp" alt="ISO 27001 Certified" style={{ width: '100%', maxWidth: 168, height: 'auto', display: 'block', background: 'transparent' }} loading="lazy" />
+              </a>
             </div>
             <div>
               <h3>Pages</h3>
@@ -551,7 +543,7 @@ export default function App() {
               <a onClick={() => scrollTo('start')}>Request a demo</a>
             </div>
           </div>
-          <div style={{ fontSize: 12, borderTop: '1px solid #2A3040', paddingTop: 20, color: '#7A8190' }}>© CyberNovr Limited</div>
+          <div style={{ fontSize: 12, borderTop: '1px solid #2A3040', paddingTop: 20, color: '#7A8190', textAlign: 'left' }}>© CyberNovr Limited</div>
         </div>
       </footer>
 
@@ -573,7 +565,35 @@ export default function App() {
         </div>
       )}
 
-      <style>{`@media(max-width:900px){ .wrap[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important} } @media(max-width:720px){ .fcols{grid-template-columns:1fr} .wrap > div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important} .wrap > div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr !important} .browser > div[style*="grid-template"]{grid-template-columns:1fr !important} }`}</style>
+      <style>{`
+        @media(max-width:1024px){ .wrap[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important; gap:24px !important} }
+        @media(max-width:900px){ .tabpanel.active .browser{order:-1} }
+        @media(max-width:768px){
+          .wrap > div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}
+          .wrap > div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr !important}
+          .fcols{grid-template-columns:1fr !important}
+          div[style*="display:flex"][style*="gap:40"]{gap:20px !important}
+        }
+        @media(max-width:640px){
+          .wrap > div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important; gap:14px !important}
+          .wrap > div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr !important; gap:14px !important}
+          div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+          table{font-size:12px}
+        }
+        @media(max-width:480px){
+          .browser[style*="maxWidth:860"]{max-width:100% !important}
+          div[style*="gap:56"]{gap:32px !important}
+          div[style*="gap:56"] img{height:52px !important; max-width:180px !important}
+        }
+        @media(min-width:1920px){
+          .wrap[style*="maxWidth:760"]{max-width:860px !important}
+          .wrap[style*="maxWidth:700"]{max-width:800px !important}
+        }
+        @media(min-width:2560px){
+          .wrap[style*="maxWidth:760"]{max-width:920px !important}
+          .wrap[style*="maxWidth:700"], .wrap[style*="maxWidth:740"], .wrap[style*="maxWidth:640"]{max-width:900px !important}
+        }
+      `}</style>
     </>
   )
 }
