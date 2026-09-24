@@ -161,9 +161,15 @@ export default function App() {
         <div className="wrap" style={{ textAlign: 'center' }}>
           <div className="muted" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 28 }}>Trusted by — regulator, operators & interconnect</div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 56, flexWrap: 'wrap' }}>
-            <img src="https://ngfrepository.org.ng:8443/retrieve/02b0087e-4b32-4d71-9a2a-d1e1601d3452" alt="NCC — Nigerian Communications Commission" style={{ height: 72, width: 'auto', maxWidth: 260, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/ncc-repository.png' }} />
-            <img src="https://www.gloworld.com/logo.png" alt="Glo — Globacom" style={{ height: 64, width: 'auto', maxWidth: 220, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/glo.png'; e.currentTarget.style.height = '64px' }} />
-            <img src="https://www.routelinkgroup.com/routelink-group-image.png" alt="Routelink Group" style={{ height: 68, width: 'auto', maxWidth: 320, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/routelink.png' }} />
+            <a href="https://ncc.gov.ng" target="_blank" rel="noopener noreferrer" aria-label="NCC — Nigerian Communications Commission">
+              <img src="https://ngfrepository.org.ng:8443/retrieve/02b0087e-4b32-4d71-9a2a-d1e1601d3452" alt="NCC — Nigerian Communications Commission" style={{ height: 72, width: 'auto', maxWidth: 260, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/ncc-repository.png' }} />
+            </a>
+            <a href="https://www.gloworld.com" target="_blank" rel="noopener noreferrer" aria-label="Glo — Globacom">
+              <img src="https://www.gloworld.com/logo.png" alt="Glo — Globacom" style={{ height: 64, width: 'auto', maxWidth: 220, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/glo.png'; e.currentTarget.style.height = '64px' }} />
+            </a>
+            <a href="https://www.routelinkgroup.com" target="_blank" rel="noopener noreferrer" aria-label="Routelink Group">
+              <img src="https://www.routelinkgroup.com/routelink-group-image.png" alt="Routelink Group" style={{ height: 68, width: 'auto', maxWidth: 320, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/routelink.png' }} />
+            </a>
           </div>
         </div>
       </section>
