@@ -160,27 +160,17 @@ export default function App() {
               <img src="/dashboard.png" alt="NovrGRC dashboard — sector resilience overview" style={{ width: '100%', height: 'auto', display: 'block', imageRendering: '-webkit-optimize-contrast' }} loading="eager" />
               <span style={{ position: 'absolute', right: 12, bottom: 12, background: 'rgba(14,21,38,.82)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '6px 10px', borderRadius: 999, backdropFilter: 'blur(6px)' }}>Click to expand ↗</span>
             </div>
-            <div style={{ padding: '14px 20px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 16, borderTop: '1px solid var(--line)', background: '#fff' }}>
-              {providers.map(p => (
-                <div key={p.name} style={{ textAlign: 'left' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, fontWeight: 700, color: 'var(--ink)' }}>
-                    <span style={{ color: 'var(--muted)', fontWeight: 600, fontSize: 11 }}>{p.name.split(' — ')[0]}</span><span>{p.pct}%</span>
-                  </div>
-                  <div className="bar"><div style={{ width: `${p.pct}%` }} /></div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       <section className="section" style={{ padding: '36px 0' }}>
         <div className="wrap" style={{ textAlign: 'center' }}>
-          <div className="muted" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 22 }}>Trusted by forward-looking teams — built for regulators & providers</div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 40, flexWrap: 'wrap', opacity: .9 }}>
-            <span style={{ fontWeight: 800, letterSpacing: '.06em', fontSize: 13, color: '#0A3D62', border: '1px solid var(--line)', padding: '8px 14px', borderRadius: 10, background: '#fff' }}>NCC • NCS-CRF</span>
-            <span style={{ fontWeight: 800, fontSize: 14, color: '#0E7A4E' }}>mendel<span style={{ color: '#16A46B' }}>IX</span> • CyberNovr</span>
-            <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600 }}>ISO 27001 • NIST CSF • NDPA • PCI DSS</span>
+          <div className="muted" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 28 }}>Trusted by — regulator, operators & interconnect</div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 56, flexWrap: 'wrap' }}>
+            <img src="https://ngfrepository.org.ng:8443/retrieve/02b0087e-4b32-4d71-9a2a-d1e1601d3452" alt="NCC — Nigerian Communications Commission" style={{ height: 72, width: 'auto', maxWidth: 260, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/ncc-repository.png' }} />
+            <img src="https://www.gloworld.com/logo.png" alt="Glo — Globacom" style={{ height: 64, width: 'auto', maxWidth: 220, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/glo.png'; e.currentTarget.style.height = '64px' }} />
+            <img src="https://www.routelinkgroup.com/routelink-group-image.png" alt="Routelink Group" style={{ height: 68, width: 'auto', maxWidth: 320, objectFit: 'contain', display: 'block' }} loading="lazy" onError={e => { e.currentTarget.src = '/logos/routelink.png' }} />
           </div>
         </div>
       </section>
