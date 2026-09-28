@@ -1,0 +1,51 @@
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+@keyframes marquee-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+}
+.marquee-track {
+  display: flex; gap: 0; width: max-content;
+  animation: marquee-x 28s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.live-dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); }
+.live-dot::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid var(--brand); animation: pulse-ring 1.8s ease-out infinite;
+}
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.vault-scan { position: relative; overflow: hidden; }
+.vault-scan::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -40%;
+  height: 40%; pointer-events: none; opacity: 0;
+  background: linear-gradient(180deg, transparent, rgba(198, 255, 77, 0.35), transparent);
+  transition: opacity 0.25s;
+}
+.vault-scan:hover::before { opacity: 1; animation: scan-y 1.1s var(--ease); }
+@keyframes scan-y { from { top: -40%; } to { top: 110%; } }
+
+.magnetic { will-change: transform; }
+.page-wipe {
+  position: fixed; inset: 0; z-index: 70; pointer-events: none;
+  background: var(--dark-band);
+  transform-origin: bottom;
+}
+.ticker-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }

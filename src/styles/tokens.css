@@ -1,0 +1,22 @@
+:root {
+  --canvas: #F3FBF6;
+  --mint: #DFF5E8;
+  --soft-green: #A8E6C3;
+  --brand: #16A46B;
+  --brand-deep: #0F7A50;
+  --ink: #0A2E22;
+  --muted: #4A5D54;
+  --lime: #C6FF4D;
+  --card: rgba(255, 255, 255, 0.82);
+  --line: #CBE9D6;
+  --line-strong: #9ED9B8;
+  --dark-band: #0A2E22;
+  --dark-band-2: #0C3B2B;
+  --radius: 22px;
+  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 18px 50px -22px rgba(10, 46, 34, 0.22), 0 8px 20px -12px rgba(10, 46, 34, 0.12);
+  --shadow-glow: 0 0 0 1px rgba(22, 164, 107, 0.12), 0 24px 70px -24px rgba(22, 164, 107, 0.45);
+}
