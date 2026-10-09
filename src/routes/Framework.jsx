@@ -125,6 +125,16 @@ export default function Framework() {
               assessment · automated and customised assessments. Also covers {frameworksIntlExamples.join(' · ')}.
             </p>
           </Reveal>
+          <Reveal delay={0.16}>
+            <div style={{ marginTop: 22, display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 700, color: 'var(--brand-deep)' }}>
+              {['Obligations', 'Map controls', 'Test continuously', 'Collect evidence', 'Remediate', 'Report'].map((s, i, a) => (
+                <span key={s} style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                  {s}{i < a.length - 1 && <span aria-hidden="true" style={{ color: 'var(--brand)' }}>→</span>}
+                </span>
+              ))}
+            </div>
+            <p className="muted" style={{ marginTop: 10, fontSize: 13 }}>The evidence chain — from regulatory obligation to report.</p>
+          </Reveal>
         </div>
       </section>
       <CtaBand title="See the frameworks mapped to your controls." />

@@ -10,6 +10,16 @@ const addOns = [
   { k: '⚙', title: 'Low-code / no-code workflows', sub: 'Customise workflows without engineering support.', preview: ['Drag-and-drop approval chains', 'Auto-escalations and reminders', 'Shipped by ops teams — no engineers required'] },
 ]
 
+const hubNodes = [
+  { id: 'risk', label: 'RISK', x: 110, y: 70 },
+  { id: 'inc', label: 'INCIDENTS', x: 110, y: 220 },
+  { id: 'pol', label: 'POLICY', x: 110, y: 370 },
+  { id: 'comp', label: 'COMPLIANCE', x: 690, y: 45 },
+  { id: 'aud', label: 'AUDIT', x: 690, y: 170 },
+  { id: 'tpr', label: 'THIRD-PARTY', x: 690, y: 295 },
+  { id: 'ana', label: 'ANALYTICS', x: 690, y: 415 },
+]
+
 export default function Platform() {
   const [on, setOn] = useState({})
   return (
@@ -17,8 +27,36 @@ export default function Platform() {
       <PageHero
         eyebrow="Platform"
         title="Seven modules. One record."
-        sub="Risk, compliance, audit, third-party risk, incidents, policy and reporting — all working from the same data. Real-time insights on resilience capability and maturity, at entity and sector level."
+        sub="Seven functional domains share controls, evidence, risks, obligations and insights. Real-time views on resilience capability and maturity — at entity and sector level."
       />
+      <section style={{ padding: '12px 0 84px' }}>
+        <div className="wrap" style={{ maxWidth: 980 }}>
+          <Reveal><span className="eyebrow-mono">Solution map</span></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="display" style={{ fontSize: 'clamp(28px,4vw,44px)', margin: '12px 0 6px' }}>A connected operating model.</h2>
+            <p style={{ color: 'var(--muted)', margin: '0 0 24px' }}>One shared core — every domain reads and writes to it.</p>
+          </Reveal>
+          <Reveal>
+            <div className="glass" style={{ padding: 16 }}>
+              <svg viewBox="0 0 800 460" style={{ width: '100%', height: 'auto', display: 'block' }} role="img" aria-label="Solution map: seven domains connected to one GRC core">
+                {hubNodes.map((n) => (
+                  <line key={n.id} x1={400} y1={230} x2={n.x} y2={n.y} stroke="var(--brand)" strokeWidth="1.5" strokeDasharray="6 6" />
+                ))}
+                {hubNodes.map((n) => (
+                  <g key={n.id}>
+                    <rect x={n.x - 75} y={n.y - 26} width={150} height={52} rx={12} fill="#fff" stroke="var(--line)" />
+                    <text x={n.x} y={n.y + 1} textAnchor="middle" dominantBaseline="middle" fontSize={12} fontWeight={700} fill="var(--ink)" fontFamily="var(--font-mono)">{n.label}</text>
+                  </g>
+                ))}
+                <circle cx={400} cy={230} r={64} fill="var(--dark-band)" />
+                <circle cx={400} cy={230} r={64} fill="none" stroke="var(--lime)" strokeWidth={2} />
+                <text x={400} y={224} textAnchor="middle" fontSize={16} fontWeight={800} fill="#fff">GRC</text>
+                <text x={400} y={244} textAnchor="middle" fontSize={10} fill="var(--lime)" fontFamily="var(--font-mono)">CORE</text>
+              </svg>
+            </div>
+          </Reveal>
+        </div>
+      </section>
       <section style={{ padding: '12px 0 84px' }}>
         <div className="wrap" style={{ maxWidth: 980 }}>
           {modules.map((m, i) => (

@@ -130,7 +130,12 @@ export default function Home() {
         <div className="wrap">
           <Reveal><span className="eyebrow-mono">Governance, Risk & Compliance, Powered by NovrGRC</span></Reveal>
           <Reveal delay={0.06}>
-            <h2 className="display" style={{ fontSize: 'clamp(34px,5vw,64px)', margin: '14px 0 34px', maxWidth: 800 }}>Organisation work in. Resilience insight out.</h2>
+            <h2 className="display" style={{ fontSize: 'clamp(34px,5vw,64px)', margin: '14px 0 12px', maxWidth: 800 }}>One platform. One source of truth. One view of resilience.</h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ color: 'var(--muted)', fontSize: 16, lineHeight: 1.65, maxWidth: '64ch', margin: '0 0 34px' }}>
+              From fragmented evidence and manual reporting — to continuous, measurable cyber resilience.
+            </p>
           </Reveal>
           <div className="story-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
             {[
@@ -182,7 +187,8 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.18em', color: 'var(--lime)' }}>● LIVE WALKTHROUGH — 20 MIN</div>
-            <h2 className="display" style={{ fontSize: 'clamp(36px,6vw,72px)', margin: '14px 0 20px' }}>See NovrGRC in action.</h2>
+            <h2 className="display" style={{ fontSize: 'clamp(36px,6vw,72px)', margin: '14px 0 12px' }}>Continuous cyber resilience.</h2>
+            <p style={{ color: 'rgba(255,255,255,.82)', margin: '0 0 24px', fontSize: 15 }}>Visibility · Automation · Assurance · Resilience — see NovrGRC in action.</p>
             <Link to="/demo" className="btn-ghost" style={{ background: 'var(--lime)', borderColor: 'var(--lime)', fontWeight: 800 }}>Request a demo →</Link>
           </Reveal>
         </div>

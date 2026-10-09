@@ -73,6 +73,11 @@ export default function Solutions() {
             })}
           </div>
           <style>{`@media(max-width:900px){ .splitwrap{ flex-direction:column !important } .splitwrap > div{ min-height:300px !important } }`}</style>
+          <Reveal delay={0.1}>
+            <div className="glass" style={{ marginTop: 16, padding: '14px 20px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 700, color: 'var(--brand-deep)' }}>
+              CONNECTED DATA MODEL&nbsp;&nbsp;·&nbsp;&nbsp;Vendor → Risk → Control → Incident → Remediation → Evidence
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -87,6 +92,33 @@ export default function Solutions() {
               <img src="/dashboard.png" alt="NovrGRC dashboard" style={{ width: '100%', display: 'block' }} draggable={false} />
             </div>
           </Reveal>
+          <Reveal delay={0.05}>
+            <div className="glass" style={{ marginTop: 16, padding: 20 }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', color: 'var(--brand-deep)', marginBottom: 14 }}>EXECUTIVE VIEW · SAMPLE DATA</div>
+              <div className="exec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+                {[
+                  ['OVERALL RISK', 'Medium', '#B7791F'],
+                  ['COMPLIANCE', '92%', 'var(--brand-deep)'],
+                  ['AUDIT READINESS', '87%', 'var(--brand-deep)'],
+                  ['SUPPLIER RISK', 'Low', 'var(--brand-deep)'],
+                ].map(([k, v, c]) => (
+                  <div key={k} style={{ background: 'var(--mint)', borderRadius: 12, padding: '14px 16px', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '.1em', color: 'var(--muted)' }}>{k}</div>
+                    <div className="display" style={{ fontSize: 30, color: c, marginTop: 4 }}>{v}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 16 }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '.1em', color: 'var(--muted)', marginBottom: 8 }}>TOP ACTIONS</div>
+                {['Close high-risk control gaps', 'Complete overdue vendor reviews', 'Prepare evidence for next audit'].map((a) => (
+                  <div key={a} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, padding: '6px 0', lineHeight: 1.5 }}>
+                    <span className="check solid" style={{ width: 18, height: 18, fontSize: 10 }}>→</span>{a}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+          <style>{`@media(max-width:640px){ .exec-grid{ grid-template-columns:1fr 1fr !important } }`}</style>
           <div className="compare-caps" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 14 }}>
             <div className="glass" style={{ padding: '14px 18px', fontSize: 13, lineHeight: 1.6 }}><strong>Organisation workspace.</strong> <span className="muted">Day-to-day risk, compliance, audit and policy automation.</span></div>
             <div className="glass" style={{ padding: '14px 18px', fontSize: 13, lineHeight: 1.6 }}><strong>Regulator-ready.</strong> <span className="muted">The same record rolls up into sector-wide reporting.</span></div>
