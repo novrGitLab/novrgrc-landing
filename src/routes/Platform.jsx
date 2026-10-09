@@ -16,13 +16,13 @@ export default function Platform() {
     <>
       <PageHero
         eyebrow="Platform"
-        title="Seven modules. One record."
-        sub="Risk, compliance, audit, third-party risk, incidents, policy and reporting — all working from the same underlying data. Scroll through the stack."
+        title="Key functionalities. One record."
+        sub="Risk, compliance, audit, third-party & fourth-party risk, policy, reporting and security — all working from the same data. Scroll through the stack."
       />
       <section style={{ padding: '12px 0 84px' }}>
         <div className="wrap" style={{ maxWidth: 980 }}>
           {modules.map((m, i) => (
-            <div key={m.key} style={{ position: 'sticky', top: 84 + i * 14, marginBottom: 20, zIndex: i + 1 }}>
+            <div key={m.key} className="stack-card" style={{ position: 'sticky', top: 84 + i * 14, marginBottom: 20, zIndex: i + 1 }}>
               <Reveal>
                 <div className="glass" style={{ padding: 28, display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 28, alignItems: 'center' }}>
                   <div>
@@ -42,7 +42,7 @@ export default function Platform() {
             </div>
           ))}
         </div>
-        <style>{`@media(max-width:860px){ .glass[style*="grid-template-columns"]{ grid-template-columns:1fr !important } }`}</style>
+        <style>{`@media(max-width:860px){ .glass[style*="grid-template-columns"]{ grid-template-columns:1fr !important } .stack-card{ position:static !important } }`}</style>
       </section>
 
       <section style={{ padding: '0 0 84px' }}>

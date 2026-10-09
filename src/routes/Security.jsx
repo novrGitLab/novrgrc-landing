@@ -2,12 +2,12 @@ import { PageHero, CtaBand } from '../components/PageBits'
 import { Reveal } from '../components/fx'
 
 const tiles = [
-  ['Access', 'Role-based access control. Granular permissions. Segregation of duties.'],
-  ['Data protection', 'Encryption in transit and at rest. Aligned with GDPR and NDPA.'],
-  ['Records', 'Full activity logging. Tamper-proof records for verification.'],
-  ['Deployment', 'Cloud SaaS, with an on-prem option. 99.9% uptime SLA.'],
-  ['Interface', 'Modern interface. Configurable dashboards by role.'],
-  ['Access anywhere', 'Mobile-friendly access for teams in the field.'],
+  ['Multi-tenancy', 'Air-gapped multi-tenancy — telecoms, banks, fintechs, insurers and regulators securely separated.'],
+  ['Access control', 'Role-based access control (RBAC) with granular permissions and MFA.'],
+  ['Data protection', 'Encryption in transit and at rest. Aligned with NDPA and GDPR.'],
+  ['Auditability', 'Full audit logs. Tamper-evident records for verification and regulator confidence.'],
+  ['Deployment', 'Cloud-native SaaS, with options for regulated environments. 99.9% uptime SLA.'],
+  ['Ease of adoption', 'Configurable dashboards by role; usable across business units and geographies.'],
 ]
 
 const nodes = [
@@ -24,11 +24,11 @@ export default function Security() {
       <PageHero
         eyebrow="Security & integrations"
         title="Built for regulated environments."
-        sub="Hardened for the realities of telecoms, finance and critical-infrastructure oversight — and open where it counts."
+        sub="AI-driven, multi-tenant and cloud-native — hardened for telecoms, finance, insurance and regulatory oversight, and open where it counts."
       />
       <section style={{ padding: '12px 0 84px' }}>
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+          <div className="sec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
             {tiles.map(([k, v], i) => (
               <Reveal key={k} delay={(i % 3) * 0.06}>
                 <div className="glass vault-scan" style={{ padding: 24, height: '100%' }}>
@@ -39,7 +39,7 @@ export default function Security() {
               </Reveal>
             ))}
           </div>
-          <style>{`@media(max-width:860px){ .wrap div[style*="repeat(3,1fr)"]{ grid-template-columns:1fr !important } }`}</style>
+          <style>{`@media(max-width:860px){ .sec-grid{ grid-template-columns:1fr !important } }`}</style>
         </div>
       </section>
 

@@ -23,7 +23,9 @@ export default function NetworkCanvas({ animated = true, anchor = 'center' }) {
     const canvas = ref.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
-    const DPR = Math.min(window.devicePixelRatio || 1, 2)
+    // mobile trims: lower pixel-ratio cap + fewer twinkles (battery/CPU)
+    const isMobile = window.innerWidth < 768
+    const DPR = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2)
     let w = 0, h = 0, scale = 1, ox = 0, oy = 0
     let raf = 0
     let visible = true
@@ -41,8 +43,8 @@ export default function NetworkCanvas({ animated = true, anchor = 'center' }) {
       { hub: c, t: (i * 0.53 + 0.5) % 1, speed: 0.00018 + (i % 2) * 0.00007 },
     ])
 
-    // twinkling dots (fixed subset, sine phase)
-    const twinkles = Array.from({ length: 70 }, () => ({
+    // twinkling dots (fixed subset, sine phase; fewer on mobile)
+    const twinkles = Array.from({ length: isMobile ? 36 : 70 }, () => ({
       d: mapData.dots[(Math.random() * mapData.dots.length) | 0],
       phase: Math.random() * Math.PI * 2,
       speed: 1 + Math.random() * 2.2,

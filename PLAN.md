@@ -91,7 +91,7 @@ Security vault and integration diagram, preloader, cursor, page transitions, and
 ## 7. Non-negotiables
 
 - `prefers-reduced-motion`: static fallbacks for every animation
-- Below 768px: static glow instead of canvas, reduced node count if kept
+- Below 768px: animation stays on with mobile trims (DPR capped at 1.5, 36 twinkles instead of 70); tap gives the ripple, finger-drag gives the glow
 - Visible keyboard focus, AA contrast, no motion-only information
 - Semantic HTML, real labels on form fields, proper route titles
 - Pause canvas and animations offscreen

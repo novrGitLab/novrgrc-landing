@@ -1,21 +1,19 @@
 import { useState } from 'react'
 import { PageHero, CtaBand } from '../components/PageBits'
 import { Reveal } from '../components/fx'
-import { pillars } from '../data/content'
-
-const standards = ['NCS-CRF', 'NDPA', 'NCPS', 'ISO 27001', 'NIST CSF', 'PCI DSS', 'Custom']
+import { pillars, frameworksAll } from '../data/content'
 
 const pillarCopy = [
   'Governance structures, policies and compliance obligations traced to every control.',
   'Identify, assess, treat and monitor risk with appetite heatmaps and KRIs.',
-  'Harden posture across assets, identities and third parties — continuously measured.',
-  'Detect, respond and recover with linked incidents, playbooks and root-cause analysis.',
-  'Grow people and process maturity with training, assessments and best-practice templates.',
+  'Controls once, comply many times — Smart Mapping across every framework in the library.',
+  'Detect, respond and recover with linked issues, root-cause analysis and corrective actions.',
+  'CISO dashboards, board packs and regulator-ready templates — maturity you can show.',
 ]
 
 export default function Framework() {
   const [active, setActive] = useState(2)
-  const [std, setStd] = useState('NCS-CRF')
+  const [std, setStd] = useState('NCC')
 
   const goTo = (i) => setActive((i + pillars.length) % pillars.length)
 
@@ -25,11 +23,11 @@ export default function Framework() {
   return (
     <>
       <PageHero
-        eyebrow="Framework"
-        title="Five pillars of resilience."
-        sub="A process-based model running through governance, risk management, security posture, incident response and capability building. Pick a pillar on the left — the card on the right follows."
+        eyebrow="Frameworks"
+        title="One platform. Every framework you answer to."
+        sub="NovrGRC ships with Nigerian frameworks — NCC, CBN-CRF, NDPA — plus tens of international standards. Assess once, map everywhere with Smart Mapping."
       />
-      <section style={{ padding: '12px 0 84px' }}>
+      <section style={{ padding: '12px 0 48px' }}>
         <div className="wrap pillar-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 32, alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {pillars.map((x, i) => (
@@ -58,7 +56,7 @@ export default function Framework() {
           </div>
           <div style={{ position: 'sticky', top: 100 }}>
             <div className="glass" style={{ padding: 36, textAlign: 'center', minHeight: 480 }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--brand-deep)' }}>PILLAR {p.n} / 05</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--brand-deep)' }}>AREA {p.n} / 05</div>
               <h2 className="display" style={{ fontSize: 'clamp(30px,3.4vw,44px)', margin: '10px 0 14px', whiteSpace: 'pre-line' }}>{p.label}</h2>
               <p className="muted" style={{ lineHeight: 1.65, maxWidth: '46ch', margin: '0 auto 22px' }}>{pillarCopy[active]}</p>
               <div style={{ display: 'flex', alignItems: 'end', justifyContent: 'center', gap: 10, height: 150 }}>
@@ -66,7 +64,7 @@ export default function Framework() {
                   <button
                     key={x.n}
                     onClick={() => goTo(i)}
-                    aria-label={`Go to pillar ${x.n}: ${x.label.replace(/\n/g, ' ')}`}
+                    aria-label={`Go to area ${x.n}: ${x.label.replace(/\n/g, ' ')}`}
                     aria-current={i === active}
                     title={x.label.replace(/\n/g, ' ')}
                     style={{
@@ -99,15 +97,16 @@ export default function Framework() {
       </section>
 
       <section style={{ padding: '0 0 84px', textAlign: 'center' }}>
-        <div className="wrap" style={{ maxWidth: 760 }}>
+        <div className="wrap" style={{ maxWidth: 860 }}>
           <Reveal>
             <h2 style={{ fontSize: 22, lineHeight: 1.6, fontWeight: 600, margin: 0 }}>
-              Built around the sector's own <strong>NCS-CRF</strong> framework. Also used to report against <span style={{ color: 'var(--brand-deep)', fontWeight: 800 }}>national and international standards</span>.
+              Supports all Nigerian frameworks — <strong>NCC, CBN-CRF, NDPA</strong> — plus tens of{' '}
+              <span style={{ color: 'var(--brand-deep)', fontWeight: 800 }}>international standards</span>.
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
             <div style={{ marginTop: 20, display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
-              {standards.map((s) => (
+              {frameworksAll.map((s) => (
                 <button
                   key={s}
                   onClick={() => setStd(s)}
@@ -119,9 +118,14 @@ export default function Framework() {
               ))}
             </div>
           </Reveal>
+          <Reveal delay={0.12}>
+            <p className="muted" style={{ marginTop: 18, fontSize: 14 }}>
+              Framework repository · automated control mapping · automated assessments · compliance dashboards.
+            </p>
+          </Reveal>
         </div>
       </section>
-      <CtaBand title="See the framework mapped to your controls." />
+      <CtaBand title="See the frameworks mapped to your controls." />
     </>
   )
 }

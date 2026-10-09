@@ -3,14 +3,14 @@ import { PageHero } from '../components/PageBits'
 import { Reveal } from '../components/fx'
 
 const roles = [
-  { t: 'Regulator', d: 'Sector-wide oversight, maturity dashboards, industry reporting.' },
-  { t: 'Service provider', d: 'Day-to-day risk, compliance and audit automation.' },
+  { t: 'Regulator', d: 'Sector-wide visibility, maturity dashboards, supervisory reporting.' },
+  { t: 'Service provider', d: 'Telecom, bank, fintech or insurer — risk, compliance and audit automation.' },
   { t: 'Consulting partner', d: 'Multi-client delivery on one platform.' },
   { t: 'Other', d: 'Something else — tell us in the message.' },
 ]
 
 const timeline = [
-  { w: 'Week 0–1', t: 'Tailored demo', d: 'A 20-minute walkthrough shaped to your framework.' },
+  { w: 'Week 0–1', t: 'Tailored demo', d: 'A 20-minute walkthrough shaped to your frameworks (NCC, CBN, NDPA or international).' },
   { w: 'Week 1–4', t: 'Configured platform', d: 'Your framework, controls and users loaded.' },
   { w: 'Week 4–8', t: 'Training', d: 'Role-based enablement for every team.' },
   { w: 'Week 12', t: 'Go-live', d: 'Live reporting, with an annual maintenance contract.' },
@@ -37,7 +37,7 @@ export default function Demo() {
       <PageHero
         eyebrow="Get started"
         title="Request access."
-        sub="Two quick steps. Tell us who you are, then where to reach you — we'll shape the walkthrough to your framework."
+        sub="Two quick steps. Tell us who you are, then where to reach you — we'll shape the walkthrough to your frameworks."
       />
       <section style={{ padding: '12px 0 84px' }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
@@ -52,7 +52,7 @@ export default function Demo() {
                   </div>
                   {step === 1 ? (
                     <div>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12 }}>
+                      <div className="role-grid2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12 }}>
                         {roles.map((r) => (
                           <button
                             key={r.t}
@@ -98,7 +98,7 @@ export default function Demo() {
               )}
             </div>
           </Reveal>
-          <style>{`@keyframes pulse-soft{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}} @media(max-width:640px){ .glass div[style*="repeat(2,1fr)"]{ grid-template-columns:1fr !important } }`}</style>
+          <style>{`@keyframes pulse-soft{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}} @media(max-width:640px){ .role-grid2{ grid-template-columns:1fr !important } }`}</style>
         </div>
       </section>
 
@@ -119,7 +119,7 @@ export default function Demo() {
             ))}
           </div>
           <div style={{ marginTop: 18, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <span className="chip">SaaS or on-prem</span><span className="chip">99.9% SLA</span><span className="chip">Sponsored Tiers 2 &amp; 3</span>
+            <span className="chip">SaaS or on-prem</span><span className="chip">99.9% SLA</span><span className="chip">NCC · CBN · NDPA + internationals</span>
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@ import { Reveal } from './fx'
 
 export function PageHero({ eyebrow, title, sub }) {
   return (
-    <section className="dotgrid" style={{ padding: '72px 0 32px', position: 'relative', overflow: 'hidden' }}>
+    <section className="dotgrid" style={{ padding: 'clamp(48px,8vw,72px) 0 32px', position: 'relative', overflow: 'hidden' }}>
       <div className="wrap" style={{ maxWidth: 820 }}>
         <Reveal><span className="eyebrow-mono">{eyebrow}</span></Reveal>
         <Reveal delay={0.06}>
@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, sub }) {
   )
 }
 
-export function CtaBand({ title = 'See NovrGRC in action.', sub = 'A 20-minute walkthrough tailored to your role — regulator or provider.' }) {
+export function CtaBand({ title = 'See NovrGRC in action.', sub = 'A 20-minute walkthrough tailored to your organisation — provider or regulator, NCC, CBN, NDPA or international.' }) {
   return (
     <section className="grain" style={{ position: 'relative', background: 'linear-gradient(135deg,var(--dark-band),var(--dark-band-2))', color: '#fff', textAlign: 'center', padding: '72px 0' }}>
       <div className="wrap">
