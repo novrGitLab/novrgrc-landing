@@ -24,12 +24,44 @@ export default function Demo() {
   const [form, setForm] = useState({ name: '', email: '', org: '', message: '' })
   const [toast, setToast] = useState('')
   const [done, setDone] = useState(false)
+  const [sending, setSending] = useState(false)
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
+    if (sending) return
     if (!form.name || !form.email) return setToast('Please enter your name and work email.')
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return setToast('Please enter a valid email.')
-    setDone(true)
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
+    if (!accessKey) return setToast('Form is not connected yet — please try again later.')
+    setSending(true)
+    setToast('')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Demo request — ${role}${form.org ? ` — ${form.org}` : ''}`,
+          from_name: 'NovrGRC website',
+          botcheck: '',
+          name: form.name,
+          email: form.email,
+          organisation: form.org,
+          role,
+          message: form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setDone(true)
+      } else {
+        setToast('Something went wrong sending your request — please try again.')
+      }
+    } catch {
+      setToast('Network error — please check your connection and try again.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -82,7 +114,7 @@ export default function Demo() {
                         <label>Work email *<input placeholder="you@organisation.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} style={{ ...inputStyle, marginTop: 4 }} /></label>
                         <label>Organisation<input placeholder="Organisation" value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} style={{ ...inputStyle, marginTop: 4 }} /></label>
                         <label>What are you looking to solve?<textarea placeholder="Message" rows={3} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} style={{ ...inputStyle, marginTop: 4, resize: 'vertical' }} /></label>
-                        <button type="submit" className="btn-primary" style={{ border: 'none', width: '100%', marginTop: 4 }}>Request a demo</button>
+                        <button type="submit" className="btn-primary" disabled={sending} style={{ border: 'none', width: '100%', marginTop: 4, opacity: sending ? 0.6 : 1 }}>{sending ? 'Sending…' : 'Request a demo'}</button>
                         {toast && <div style={{ fontSize: 13, color: '#B33737', fontWeight: 600 }}>{toast}</div>}
                         <div style={{ fontSize: 11, color: 'var(--muted)', textAlign: 'center' }}>By submitting, you agree to our data processing for demo scheduling. We don't share your details.</div>
                       </div>
