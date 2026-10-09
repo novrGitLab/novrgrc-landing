@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import 'lenis/dist/lenis.css'
 
 const links = [
   { to: '/framework', label: 'Framework' },
@@ -84,7 +85,7 @@ export default function Shell({ onDemoSubmit }) {
         <div style={{ height: '100%', width: `${progress * 100}%`, background: 'linear-gradient(90deg,var(--brand),var(--soft-green))' }} />
       </div>
 
-      <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(243,251,246,.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--line)' }}>
+      <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(243,251,246,.88)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid var(--line)' }}>
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, paddingTop: 12, paddingBottom: 12 }}>
           <Link to="/" aria-label="NovrGRC — home" style={{ display: 'inline-flex', alignItems: 'center' }}>
             <img src="/novrgrc-logo.png" alt="NovrGRC by CyberNovr" style={{ height: 40, width: 'auto', display: 'block' }} />
@@ -114,7 +115,7 @@ export default function Shell({ onDemoSubmit }) {
         </motion.main>
       </AnimatePresence>
 
-      <footer style={{ background: 'var(--dark-band)', color: '#C9D8D0', marginTop: 0 }}>
+      <footer style={{ background: 'var(--dark-band)', color: '#C9D8D0', position: 'relative', zIndex: 1 }}>
         <div className="wrap" style={{ paddingTop: 48, paddingBottom: 24, display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', gap: 28 }}>
           <div>
             <div style={{ color: '#fff', fontWeight: 800, fontSize: 18, marginBottom: 8 }}>NovrGRC</div>
@@ -129,7 +130,7 @@ export default function Shell({ onDemoSubmit }) {
             <Link to="/solutions">Solutions</Link><Link to="/security">Security</Link><Link to="/demo">Request a demo</Link>
           </div>
         </div>
-        <div className="wrap" style={{ fontSize: 12, borderTop: '1px solid rgba(255,255,255,.14)', paddingTop: 16, paddingBottom: 20, color: '#8AA79A' }}>CyberNovr Limited</div>
+        <div className="wrap" style={{ fontSize: 12, borderTop: '1px solid rgba(255,255,255,.14)', paddingTop: 16, paddingBottom: 'calc(20px + env(safe-area-inset-bottom, 0px))', color: '#8AA79A' }}>CyberNovr Limited</div>
       </footer>
       <style>{`
         .btn-primary{ display:inline-flex; align-items:center; justify-content:center; padding:11px 22px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700; font-size:14px; text-decoration:none; box-shadow:0 10px 22px -10px rgba(22,164,107,.55); border:1px solid transparent; cursor:pointer }

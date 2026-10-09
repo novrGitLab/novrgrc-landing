@@ -13,6 +13,7 @@
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .marquee-track {
   display: flex; gap: 0; width: max-content;

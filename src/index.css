@@ -15,7 +15,7 @@
   --shadow-soft:0 12px 30px -20px rgba(20,30,60,.15);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:72px; font-size:15px}
+html{scroll-padding-top:72px; font-size:15px}
 html,body{margin:0; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden}
 img{max-width:100%}
 a{color:inherit; text-decoration:none}
@@ -96,13 +96,6 @@ td,th{padding:16px 14px; text-align:left; border-bottom:1px solid var(--line); v
 .chip.green{background:#E8F8EF; color:var(--green); border-color:#cfeede}
 
 /* footer */
-footer{background:var(--ink); color:#B8BEC9; padding:56px 0 28px}
-.fcols{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; margin-bottom:28px}
-.fcols h3{font-size:14px; color:#fff; margin:0 0 14px}
-.fcols a,.fcols div{font-size:14px; color:#9DA4B0; margin-bottom:10px; cursor:pointer}
-.fcols a{display:block}
-.fcols a:hover{color:#fff}
-.foot-bottom{font-size:12px; border-top:1px solid #2A3040; padding-top:20px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; color:#7A8190}
 .mob-menu{ display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid var(--line); padding:16px 24px; flex-direction:column; gap:12px; box-shadow:0 16px 40px -16px rgba(0,0,0,.15)}
 .mob-menu.open{display:flex}
 .mob-menu a{font-weight:600; color:var(--ink); padding:10px 0; border-bottom:1px solid var(--soft)}
