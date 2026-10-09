@@ -87,7 +87,7 @@ export default function Shell({ onDemoSubmit }) {
       <header style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(243,251,246,.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--line)' }}>
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, paddingTop: 12, paddingBottom: 12 }}>
           <Link to="/" aria-label="NovrGRC — home" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <img src="/novrgrc.jpeg" alt="NovrGRC by CyberNovr" style={{ height: 40, width: 'auto', display: 'block', mixBlendMode: 'multiply' }} />
+            <img src="/novrgrc-logo.png" alt="NovrGRC by CyberNovr" style={{ height: 40, width: 'auto', display: 'block' }} />
           </Link>
           <nav style={{ display: 'flex', gap: 22, fontSize: 14, fontWeight: 600 }} className="hide-m-nav">
             {links.map(l => (
