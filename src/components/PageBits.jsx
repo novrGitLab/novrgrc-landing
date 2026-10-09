@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, sub }) {
   )
 }
 
-export function CtaBand({ title = 'See NovrGRC in action.', sub = 'A 20-minute walkthrough tailored to your organisation — provider or regulator, NCC, CBN, NDPA or international.' }) {
+export function CtaBand({ title = 'See NovrGRC in action.', sub = 'A 20-minute walkthrough tailored to your organisation — provider or regulator, CRF-NCS, CBN, NDPA, NCPS or international.' }) {
   return (
     <section className="grain" style={{ position: 'relative', background: 'linear-gradient(135deg,var(--dark-band),var(--dark-band-2))', color: '#fff', textAlign: 'center', padding: '72px 0' }}>
       <div className="wrap">

@@ -7,7 +7,7 @@ const addOns = [
   { k: 'AI', title: 'AI risk prediction', sub: 'Anomaly detection and remediation suggestions.', preview: ['Flags controls drifting toward failure before they breach', 'Remediations ranked by impact on your risk score', 'Weekly risk forecast per entity (sample data)'] },
   { k: 'Aa', title: 'NLP for regulatory text', sub: 'Automatic analysis of new regulatory language.', preview: ['New amendments auto-summarised in plain language', 'Affected controls mapped in one click', 'Change alerts routed straight to control owners'] },
   { k: 'CC', title: 'Continuous control monitoring', sub: 'Always-on testing of key controls.', preview: ['24/7 control testing across your estate', 'Exceptions open findings automatically', 'Evidence attached without chasing owners'] },
-  { k: '⚙', title: 'Low-code workflow builder', sub: 'Customise workflows without engineering support.', preview: ['Drag-and-drop approval chains', 'Auto-escalations and reminders', 'Shipped by ops teams — no engineers required'] },
+  { k: '⚙', title: 'Low-code / no-code workflows', sub: 'Customise workflows without engineering support.', preview: ['Drag-and-drop approval chains', 'Auto-escalations and reminders', 'Shipped by ops teams — no engineers required'] },
 ]
 
 export default function Platform() {
@@ -16,8 +16,8 @@ export default function Platform() {
     <>
       <PageHero
         eyebrow="Platform"
-        title="Key functionalities. One record."
-        sub="Risk, compliance, audit, third-party & fourth-party risk, policy, reporting and security — all working from the same data. Scroll through the stack."
+        title="Seven modules. One record."
+        sub="Risk, compliance, audit, third-party risk, incidents, policy and reporting — all working from the same data. Real-time insights on resilience capability and maturity, at entity and sector level."
       />
       <section style={{ padding: '12px 0 84px' }}>
         <div className="wrap" style={{ maxWidth: 980 }}>
@@ -110,6 +110,31 @@ export default function Platform() {
               .addon-preview{ padding:0 10px 16px 0 !important; }
             }
           `}</style>
+        </div>
+      </section>
+      <section style={{ padding: '0 0 84px' }}>
+        <div className="wrap" style={{ maxWidth: 980 }}>
+          <Reveal><span className="eyebrow-mono">Subscription model</span></Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="display" style={{ fontSize: 'clamp(28px,4vw,44px)', margin: '12px 0 6px' }}>A license that scales with you.</h2>
+            <p style={{ color: 'var(--muted)', margin: '0 0 22px' }}>License or subscription — three ways to buy, one platform.</p>
+          </Reveal>
+          <div className="sub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+            {[
+              { t: 'User-based', d: 'Fees scale with your seat count — start small, add users as adoption grows.' },
+              { t: 'Module-based', d: 'License only the modules you need today — switch on the rest when ready.' },
+              { t: 'Enterprise-wide', d: 'Full-platform coverage across every business unit and geography.' },
+            ].map((s, i) => (
+              <Reveal key={s.t} delay={i * 0.06}>
+                <div className="glass" style={{ padding: 24, height: '100%' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--brand-deep)' }}>0{i + 1}</div>
+                  <h3 style={{ margin: '8px 0', fontSize: 18 }}>{s.t}</h3>
+                  <p style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <style>{`@media(max-width:860px){ .sub-grid{ grid-template-columns:1fr !important } }`}</style>
         </div>
       </section>
       <CtaBand title="See the modules in a live demo." />

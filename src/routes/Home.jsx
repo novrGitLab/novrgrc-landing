@@ -4,7 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 import NetworkCanvas from '../components/NetworkCanvas'
 import Marquee from '../components/Marquee'
 import { Reveal, MagneticButton } from '../components/fx'
-import { outcomes } from '../data/content'
+import { outcomes, grcTrio } from '../data/content'
 
 function CountUp({ value, suffix }) {
   const ref = useRef(null)
@@ -90,12 +90,40 @@ export default function Home() {
             <a href="https://www.routelinkgroup.com" target="_blank" rel="noopener noreferrer" aria-label="Routelink Group">
               <img src="/logos/routelink.png" alt="Routelink Group" style={{ height: 68, width: 'auto', maxWidth: 320, objectFit: 'contain', display: 'block' }} loading="lazy" />
             </a>
+            <span aria-label="Rapidlink" style={{ fontWeight: 800, fontSize: 22, letterSpacing: '-.02em', color: 'var(--ink)' }}>Rapidlink</span>
           </div>
         </div>
       </section>
       <style>{`@media(max-width:1024px){ section.hero-section{ padding:48px 0 32px !important; min-height:0 !important } section .hero-map{ position:relative !important; right:auto !important; top:auto !important; transform:none !important; width:100% !important; height:380px !important; margin-top:12px; order:2 } section .hero-copy{ order:1 } }`}</style>
 
-      <Marquee items={['NCC · CBN-CRF · NDPA READY', 'ISO 27001 · NIST CSF · PCI DSS · SOC 2', 'AI-DRIVEN · MULTI-TENANT · CLOUD-NATIVE']} />
+      <Marquee items={['CRF-NCS · CBN · NDPA · NCPS READY', 'ISO 27001 · NIST CSF · PCI DSS · CUSTOM', 'AI-DRIVEN · MULTI-TENANT · CLOUD-NATIVE']} />
+
+      {/* WHAT GRC MEANS */}
+      <section style={{ padding: '84px 0 0' }}>
+        <div className="wrap">
+          <Reveal><span className="eyebrow-mono">GRC, interwoven</span></Reveal>
+          <Reveal delay={0.06}>
+            <h2 className="display" style={{ fontSize: 'clamp(34px,5vw,64px)', margin: '14px 0 12px', maxWidth: 800 }}>One posture, three disciplines.</h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ color: 'var(--muted)', fontSize: 16, lineHeight: 1.65, maxWidth: '68ch', margin: '0 0 34px' }}>
+              Governance, Risk Management and Compliance collectively underpin a robust cybersecurity posture — aligning
+              initiatives with business objectives, legal obligations and risk tolerance.
+            </p>
+          </Reveal>
+          <div className="story-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+            {grcTrio.map((c, i) => (
+              <Reveal key={c.t} delay={i * 0.06}>
+                <div className="glass" style={{ padding: 24 }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--brand-deep)' }}>0{i + 1}</div>
+                  <h3 style={{ margin: '8px 0', fontSize: 19 }}>{c.t}</h3>
+                  <p style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{c.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* PINNED STORY */}
       <section style={{ padding: '84px 0' }}>
@@ -125,7 +153,15 @@ export default function Home() {
       {/* BENTO OUTCOMES */}
       <section style={{ padding: '20px 0 84px' }}>
         <div className="wrap">
-          <Reveal><span className="eyebrow-mono">Outcomes that matter</span></Reveal>
+          <Reveal><span className="eyebrow-mono">Success criteria</span></Reveal>
+          <Reveal delay={0.06}>
+            <h2 className="display" style={{ fontSize: 'clamp(34px,5vw,64px)', margin: '14px 0 10px', maxWidth: 800 }}>Outcomes that matter.</h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ color: 'var(--muted)', fontSize: 16, lineHeight: 1.65, maxWidth: '64ch', margin: '0 0 26px' }}>
+              The tests the platform is built to pass — for service providers and regulators alike.
+            </p>
+          </Reveal>
           <div className="bento-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginTop: 20 }}>
             {outcomes.map((o, i) => (
               <Reveal key={o.label} delay={(i % 3) * 0.06}>

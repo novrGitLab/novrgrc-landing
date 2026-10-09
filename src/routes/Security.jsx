@@ -2,12 +2,12 @@ import { PageHero, CtaBand } from '../components/PageBits'
 import { Reveal } from '../components/fx'
 
 const tiles = [
-  ['Multi-tenancy', 'Air-gapped multi-tenancy — telecoms, banks, fintechs, insurers and regulators securely separated.'],
-  ['Access control', 'Role-based access control (RBAC) with granular permissions and MFA.'],
-  ['Data protection', 'Encryption in transit and at rest. Aligned with NDPA and GDPR.'],
-  ['Auditability', 'Full audit logs. Tamper-evident records for verification and regulator confidence.'],
-  ['Deployment', 'Cloud-native SaaS, with options for regulated environments. 99.9% uptime SLA.'],
-  ['Ease of adoption', 'Configurable dashboards by role; usable across business units and geographies.'],
+  ['Access control', 'Role-based access control (RBAC) with least privilege — granular permissions, segregation of duties.'],
+  ['Authentication', 'Multi-factor authentication (MFA) on every account. SSO with enterprise identity providers.'],
+  ['Data protection', 'Encryption of data at rest, in use and in transit. Aligned with NDPA and GDPR.'],
+  ['Audit trail', 'Full audit trail of user and process activity — tamper-evident records for verification.'],
+  ['Scale & availability', 'Cloud SaaS preferred, with hybrid / on-prem option. Global scale: multi-language, multi-timezone, multi-currency. 99.9% uptime SLA.'],
+  ['Usability', 'Intuitive, modern UI. Configurable dashboards by role. Mobile-friendly access for teams in the field.'],
 ]
 
 const nodes = [
@@ -48,7 +48,7 @@ export default function Security() {
           <Reveal><span className="eyebrow-mono">Integrations</span></Reveal>
           <Reveal delay={0.05}>
             <h2 className="display" style={{ fontSize: 'clamp(28px,4vw,44px)', margin: '12px 0 6px' }}>Plays well with your stack.</h2>
-            <p className="muted" style={{ margin: '0 0 24px' }}>Open APIs, SSO and connectors — data flows in, insight flows out.</p>
+            <p className="muted" style={{ margin: '0 0 24px' }}>Open APIs, SSO and connectors — data flows in, insight flows out, including regulatory threat-intel feeds.</p>
           </Reveal>
           <Reveal>
             <div className="glass" style={{ padding: 16 }}>
@@ -72,7 +72,7 @@ export default function Security() {
           <style>{`.flowline{ animation: dashmove 1.2s linear infinite } @keyframes dashmove{ to{ stroke-dashoffset:-24 } } @media (prefers-reduced-motion: reduce){ .flowline{ animation:none } }`}</style>
           <Reveal delay={0.1}>
             <div style={{ marginTop: 18, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              {['Open APIs', 'SSO', 'ERP · HR · ITSM', 'SIEM · IAM', 'Threat-intel feeds'].map((t) => (
+              {['Open APIs', 'SSO', 'ERP · HR · ITSM', 'SIEM · IAM', 'Regulatory threat-intel feeds'].map((t) => (
                 <span key={t} className="chip">{t}</span>
               ))}
             </div>

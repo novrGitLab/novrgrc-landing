@@ -3,12 +3,13 @@ import { PageHero, CtaBand } from '../components/PageBits'
 import { Reveal } from '../components/fx'
 
 const roles = [
-  ['Risk owners', 'Automated risk register, taxonomy, qualitative & quantitative assessments, KRIs and heatmaps.', 'Risk Management'],
-  ['Compliance officers', 'Framework repository, Smart Mapping, automated assessments, compliance dashboards.', 'Compliance Management'],
-  ['Auditors', 'Planning, scheduling, evidence upload and findings tracking.', 'Audit Management'],
-  ['Vendor managers', 'Vendor onboarding, risk analysis and scoring — including fourth parties.', 'Third-Party Risk'],
-  ['Policy owners', 'Automated workflows, role-based controls and real-time dashboards across the policy lifecycle.', 'Policy Management'],
-  ['Executives & board', 'CISO dashboards, board-level reporting and regulator-ready templates.', 'Reporting'],
+  ['Risk owners', 'Risk register and taxonomy, qual & quant assessments, KRIs, heatmaps and stress testing.', 'Risk Management'],
+  ['Compliance officers', 'Framework repository, Smart Mapping, change tracking and continuous control tests.', 'Compliance Management'],
+  ['Auditors', 'Planning and scheduling, automated evidence (AWS, GCP, Azure, endpoints), workpapers and findings.', 'Audit Management'],
+  ['Vendor managers', 'Onboarding and due diligence, agentic-AI questionnaires, ratings and contract repository.', 'Third-Party Risk'],
+  ['Incident responders', 'Centralised capture, RCA and corrective actions, linked to risks and controls.', 'Incidents'],
+  ['Policy owners', 'Lifecycle from draft to acknowledge, templates and automated asset collection.', 'Policy Management'],
+  ['Executives & board', 'Real-time dashboards, heatmaps and automated board and regulator reports.', 'Reporting'],
   ['Regulators', 'Sector-wide visibility and reporting on governance, risk and compliance.', 'Oversight'],
 ]
 

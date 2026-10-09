@@ -10,7 +10,7 @@ const roles = [
 ]
 
 const timeline = [
-  { w: 'Week 0–1', t: 'Tailored demo', d: 'A 20-minute walkthrough shaped to your frameworks (NCC, CBN, NDPA or international).' },
+  { w: 'Week 0–1', t: 'Tailored demo', d: 'A 20-minute walkthrough shaped to your frameworks (CRF-NCS, CBN, NDPA, NCPS or international).' },
   { w: 'Week 1–4', t: 'Configured platform', d: 'Your framework, controls and users loaded.' },
   { w: 'Week 4–8', t: 'Training', d: 'Role-based enablement for every team.' },
   { w: 'Week 12', t: 'Go-live', d: 'Live reporting, with an annual maintenance contract.' },
@@ -119,7 +119,7 @@ export default function Demo() {
             ))}
           </div>
           <div style={{ marginTop: 18, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <span className="chip">SaaS or on-prem</span><span className="chip">99.9% SLA</span><span className="chip">NCC · CBN · NDPA + internationals</span>
+            <span className="chip">SaaS or hybrid / on-prem</span><span className="chip">99.9% SLA</span><span className="chip">CRF-NCS · CBN · NDPA · NCPS + internationals</span>
           </div>
         </div>
       </section>

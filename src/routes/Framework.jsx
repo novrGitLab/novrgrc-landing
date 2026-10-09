@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import { PageHero, CtaBand } from '../components/PageBits'
 import { Reveal } from '../components/fx'
-import { pillars, frameworksAll } from '../data/content'
+import { pillars, frameworksSpec, frameworksIntlExamples } from '../data/content'
 
 const pillarCopy = [
-  'Governance structures, policies and compliance obligations traced to every control.',
-  'Identify, assess, treat and monitor risk with appetite heatmaps and KRIs.',
-  'Controls once, comply many times — Smart Mapping across every framework in the library.',
-  'Detect, respond and recover with linked issues, root-cause analysis and corrective actions.',
-  'CISO dashboards, board packs and regulator-ready templates — maturity you can show.',
+  'Strategic direction and overarching policies — governance traced to every control.',
+  'Identify, assess, treat and monitor risk with appetite heatmaps, KRIs and stress testing.',
+  'Assess once, comply many times — Smart Mapping across every framework in the library.',
+  'Centralised capture, root-cause analysis and corrective actions linked to risks and controls.',
+  'CISO dashboards, board packs and regulator-defined reports with AI-driven insights.',
 ]
 
 export default function Framework() {
   const [active, setActive] = useState(2)
-  const [std, setStd] = useState('NCC')
+  const [std, setStd] = useState('CRF-NCS')
 
   const goTo = (i) => setActive((i + pillars.length) % pillars.length)
 
@@ -25,7 +25,7 @@ export default function Framework() {
       <PageHero
         eyebrow="Frameworks"
         title="One platform. Every framework you answer to."
-        sub="NovrGRC ships with Nigerian frameworks — NCC, CBN-CRF, NDPA — plus tens of international standards. Assess once, map everywhere with Smart Mapping."
+        sub="From CRF-NCS, the CBN Cybersecurity Framework and NDPA to ISO 27001, NIST CSF and PCI DSS — assess once, map everywhere with Smart Mapping. Custom frameworks included."
       />
       <section style={{ padding: '12px 0 48px' }}>
         <div className="wrap pillar-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 32, alignItems: 'start' }}>
@@ -100,13 +100,14 @@ export default function Framework() {
         <div className="wrap" style={{ maxWidth: 860 }}>
           <Reveal>
             <h2 style={{ fontSize: 22, lineHeight: 1.6, fontWeight: 600, margin: 0 }}>
-              Supports all Nigerian frameworks — <strong>NCC, CBN-CRF, NDPA</strong> — plus tens of{' '}
-              <span style={{ color: 'var(--brand-deep)', fontWeight: 800 }}>international standards</span>.
+              Aligned to <strong>CRF-NCS</strong>, the <strong>CBN Cybersecurity Framework</strong> (commercial and
+              MFBs), <strong>NDPA</strong> and <strong>NCPS</strong> — plus{' '}
+              <span style={{ color: 'var(--brand-deep)', fontWeight: 800 }}>international standards and your own custom frameworks</span>.
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
             <div style={{ marginTop: 20, display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
-              {frameworksAll.map((s) => (
+              {frameworksSpec.map((s) => (
                 <button
                   key={s}
                   onClick={() => setStd(s)}
@@ -120,7 +121,8 @@ export default function Framework() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="muted" style={{ marginTop: 18, fontSize: 14 }}>
-              Framework repository · automated control mapping · automated assessments · compliance dashboards.
+              Repository of regulations and standards · Smart Mapping across frameworks · change tracking and impact
+              assessment · automated and customised assessments. Also covers {frameworksIntlExamples.join(' · ')}.
             </p>
           </Reveal>
         </div>
