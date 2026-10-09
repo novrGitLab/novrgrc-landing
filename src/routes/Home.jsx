@@ -90,7 +90,9 @@ export default function Home() {
             <a href="https://www.routelinkgroup.com" target="_blank" rel="noopener noreferrer" aria-label="Routelink Group">
               <img src="/logos/routelink.png" alt="Routelink Group" style={{ height: 68, width: 'auto', maxWidth: 320, objectFit: 'contain', display: 'block' }} loading="lazy" />
             </a>
-            <span aria-label="Rapidlink" style={{ fontWeight: 800, fontSize: 22, letterSpacing: '-.02em', color: 'var(--ink)' }}>Rapidlink</span>
+            <a href="https://rapidlinkng.com" target="_blank" rel="noopener noreferrer" aria-label="RapidLink Telekoms">
+              <img src="/logos/rapidlink.png" alt="RapidLink Telekoms" style={{ height: 64, width: 'auto', maxWidth: 260, objectFit: 'contain', display: 'block' }} loading="lazy" />
+            </a>
           </div>
         </div>
       </section>
