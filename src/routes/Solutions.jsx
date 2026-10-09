@@ -65,7 +65,7 @@ export default function Solutions() {
                 >
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.14em', opacity: 0.8 }}>{s.tag}</div>
                   <h2 className="display" style={{ fontSize: 'clamp(26px,3vw,38px)', margin: '10px 0 16px' }}>{s.title}</h2>
-                  <ul style={{ margin: 0, paddingLeft: 18, fontSize: 14, lineHeight: 1.9, opacity: side === null || side === s.id ? 1 : 0, transition: 'opacity .3s', whiteSpace: side === s.id || side === null ? 'normal' : 'nowrap' }}>
+                  <ul style={{ margin: 0, paddingLeft: 18, fontSize: 14, lineHeight: 1.9, opacity: side === null || side === s.id ? 1 : 0, transition: 'opacity .18s ease' }}>
                     {s.points.map((p) => <li key={p}>{p}</li>)}
                   </ul>
                 </div>
