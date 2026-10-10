@@ -4,11 +4,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import 'lenis/dist/lenis.css'
 
 const links = [
+  { to: '/about', label: 'About' },
   { to: '/framework', label: 'Framework' },
   { to: '/platform', label: 'Platform' },
   { to: '/solutions', label: 'Solutions' },
   { to: '/security', label: 'Security' },
-  { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
 
