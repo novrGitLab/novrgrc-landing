@@ -8,6 +8,8 @@ const Framework = lazy(() => import('./routes/Framework'))
 const Solutions = lazy(() => import('./routes/Solutions'))
 const Security = lazy(() => import('./routes/Security'))
 const Demo = lazy(() => import('./routes/Demo'))
+const About = lazy(() => import('./routes/About'))
+const Contact = lazy(() => import('./routes/Contact'))
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="framework" element={<Framework />} />
         <Route path="solutions" element={<Solutions />} />
         <Route path="security" element={<Security />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="demo" element={<Demo />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

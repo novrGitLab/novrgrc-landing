@@ -8,6 +8,8 @@ const links = [
   { to: '/platform', label: 'Platform' },
   { to: '/solutions', label: 'Solutions' },
   { to: '/security', label: 'Security' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Shell({ onDemoSubmit }) {
@@ -25,6 +27,8 @@ export default function Shell({ onDemoSubmit }) {
       '/platform': 'Platform — NovrGRC',
       '/solutions': 'Solutions — NovrGRC',
       '/security': 'Security — NovrGRC',
+      '/about': 'About us — NovrGRC',
+      '/contact': 'Contact — NovrGRC',
       '/demo': 'Request a demo — NovrGRC',
     }
     document.title = titles[loc.pathname] || 'NovrGRC'
@@ -124,10 +128,10 @@ export default function Shell({ onDemoSubmit }) {
             <img src="/iso/iso-27001.webp" alt="ISO 27001 Certified" style={{ width: '100%', maxWidth: 168, height: 'auto', display: 'block', marginTop: 16 }} loading="lazy" />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14 }}>
-            <Link to="/">Home</Link><Link to="/framework">Framework</Link><Link to="/platform">Platform</Link>
+            <Link to="/">Home</Link><Link to="/framework">Framework</Link><Link to="/platform">Platform</Link><Link to="/solutions">Solutions</Link>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14 }}>
-            <Link to="/solutions">Solutions</Link><Link to="/security">Security</Link><Link to="/demo">Request a demo</Link>
+            <Link to="/security">Security</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link><Link to="/demo">Request a demo</Link>
           </div>
         </div>
         <div className="wrap" style={{ fontSize: 12, borderTop: '1px solid rgba(255,255,255,.14)', paddingTop: 16, paddingBottom: 'calc(20px + env(safe-area-inset-bottom, 0px))', color: '#8AA79A' }}>CyberNovr Limited</div>
