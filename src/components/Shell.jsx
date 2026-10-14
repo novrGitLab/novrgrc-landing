@@ -125,7 +125,12 @@ export default function Shell({ onDemoSubmit }) {
             <div style={{ color: '#fff', fontWeight: 800, fontSize: 18, marginBottom: 8 }}>NovrGRC</div>
             <div style={{ fontSize: 13 }}>By CyberNovr Limited — AI-driven GRC for service providers and regulators. Proudly Nigerian.</div>
             <div style={{ fontSize: 13, marginTop: 10 }}>+234-809-812-0000 · grc@cybernovr.com · www.novrgrc.com</div>
-            <img src="/iso/iso-27001.webp" alt="ISO 27001 Certified" style={{ width: '100%', maxWidth: 168, height: 'auto', display: 'block', marginTop: 16 }} loading="lazy" />
+            <div style={{ marginTop: 18, paddingTop: 14, borderTop: '1px solid rgba(255,255,255,.14)' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, letterSpacing: '.16em', color: 'var(--lime)' }}>ISO 27001 CERTIFIED</div>
+              <div style={{ fontSize: 12.5, lineHeight: 1.6, marginTop: 6 }}>
+                CyberNovr is ISO 27001 certified, covering GRC services, managed SOC operations, professional services and cybersecurity education.
+              </div>
+            </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14 }}>
             <Link to="/">Home</Link><Link to="/framework">Framework</Link><Link to="/platform">Platform</Link><Link to="/solutions">Solutions</Link>
