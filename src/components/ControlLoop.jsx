@@ -197,32 +197,32 @@ function AssessCard({ x, y, drift, risk, fs }) {
 function ActCard({ x, y, drift, fs }) {
   return (
     <CardFrame x={x} y={y} i={2} fs={fs} foot="median close · 4.2 min">
-      <rect x={x + 16} y={280} width={66} height={32} rx={9} fill="var(--cl-warn-bg)" stroke="var(--cl-warn)" strokeWidth="1" />
-      <text x={x + 49} y={293} className="cl-mono" fontSize={fs.micro} textAnchor="middle" fill="var(--cl-warn-ink)">OPEN GAP</text>
-      <text x={x + 49} y={305} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--cl-warn-ink)" opacity=".75">
+      <rect x={x + 16} y={y + 94} width={66} height={32} rx={9} fill="var(--cl-warn-bg)" stroke="var(--cl-warn)" strokeWidth="1" />
+      <text x={x + 49} y={y + 107} className="cl-mono" fontSize={fs.micro} textAnchor="middle" fill="var(--cl-warn-ink)">OPEN GAP</text>
+      <text x={x + 49} y={y + 119} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--cl-warn-ink)" opacity=".75">
         {drift >= 0 ? 'detected' : 'monitoring'}
       </text>
 
-      <line x1={x + 82} y1={296} x2={x + 130} y2={296} stroke="var(--line-strong)" strokeWidth="1.4" strokeDasharray="3 4" />
-      <path d={`M${x + 124},292 l6,4 -6,4`} fill="none" stroke="var(--line-strong)" strokeWidth="1.4"
+      <line x1={x + 82} y1={y + 110} x2={x + 130} y2={y + 110} stroke="var(--line-strong)" strokeWidth="1.4" strokeDasharray="3 4" />
+      <path d={`M${x + 124},${y + 106} l6,4 -6,4`} fill="none" stroke="var(--line-strong)" strokeWidth="1.4"
         strokeLinecap="round" strokeLinejoin="round" />
       <g className="cl-packet">
-        <rect x={x + 64} y={294.5} width={20} height={3} rx={1.5} fill="var(--brand)" opacity=".28" />
-        <circle cx={x + 86} cy={296} r={7.5} fill="var(--brand)" opacity=".16" />
-        <circle cx={x + 86} cy={296} r={3.6} fill="var(--brand)" />
+        <rect x={x + 64} y={y + 108.5} width={20} height={3} rx={1.5} fill="var(--brand)" opacity=".28" />
+        <circle cx={x + 86} cy={y + 110} r={7.5} fill="var(--brand)" opacity=".16" />
+        <circle cx={x + 86} cy={y + 110} r={3.6} fill="var(--brand)" />
       </g>
-      <circle className="cl-pulse" cx={x + 163} cy={296} r={20} fill="none" stroke="var(--brand)" strokeWidth="1.6" />
+      <circle className="cl-pulse" cx={x + 163} cy={y + 110} r={20} fill="none" stroke="var(--brand)" strokeWidth="1.6" />
 
-      <rect x={x + 130} y={280} width={66} height={32} rx={9} fill="rgba(22,164,107,0.13)" stroke="var(--brand)" strokeWidth="1" />
-      <text x={x + 163} y={293} className="cl-mono" fontSize={fs.micro} textAnchor="middle" fill="var(--brand-deep)">CLOSED</text>
-      <text x={x + 163} y={305} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--brand-deep)" opacity=".75">
+      <rect x={x + 130} y={y + 94} width={66} height={32} rx={9} fill="rgba(22,164,107,0.13)" stroke="var(--brand)" strokeWidth="1" />
+      <text x={x + 163} y={y + 107} className="cl-mono" fontSize={fs.micro} textAnchor="middle" fill="var(--brand-deep)">CLOSED</text>
+      <text x={x + 163} y={y + 119} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--brand-deep)" opacity=".75">
         {drift >= 0 ? 'approving' : 'verified'}
       </text>
 
-      <text x={x + 106} y={330} className="cl-mono-m" fontSize={fs.micro} textAnchor="middle" fill="var(--muted)">
+      <text x={x + 106} y={y + 144} className="cl-mono-m" fontSize={fs.micro} textAnchor="middle" fill="var(--muted)">
         You approve · NovrGRC executes
       </text>
-      <text x={x + 106} y={344} className="cl-mono-m" fontSize={fs.micro} textAnchor="middle" fill="var(--brand-deep)">
+      <text x={x + 106} y={y + 158} className="cl-mono-m" fontSize={fs.micro} textAnchor="middle" fill="var(--brand-deep)">
         3 gaps → 0 · auto-closed
       </text>
     </CardFrame>
@@ -231,17 +231,17 @@ function ActCard({ x, y, drift, fs }) {
 
 // ── 04 PROVE: evidence pack, stamped and hashed ────────────────────────
 function ProveCard({ x, y, fs }) {
-  const sx = x + 150, sy = 320
+  const sx = x + 150, sy = y + 134
   const lines = [74, 56, 66]
   return (
     <CardFrame x={x} y={y} i={3} fs={fs} foot="board & regulator ready · all year">
-      <rect x={x + 62} y={250} width={92} height={84} rx={8} fill="#fff" stroke="var(--line)" strokeWidth="1" />
-      <rect x={x + 70} y={258} width={24} height={4} rx={2} fill="var(--brand)" />
-      <text x={x + 70} y={274} className="cl-mono" fontSize={fs.micro} fill="var(--brand-deep)">EVIDENCE #128</text>
+      <rect x={x + 62} y={y + 64} width={92} height={84} rx={8} fill="#fff" stroke="var(--line)" strokeWidth="1" />
+      <rect x={x + 70} y={y + 72} width={24} height={4} rx={2} fill="var(--brand)" />
+      <text x={x + 70} y={y + 88} className="cl-mono" fontSize={fs.micro} fill="var(--brand-deep)">EVIDENCE #128</text>
       {lines.map((w, i) => (
-        <rect key={i} x={x + 70} y={282 + i * 8} width={w} height={3} rx={1.5} fill="var(--mint)" />
+        <rect key={i} x={x + 70} y={y + 96 + i * 8} width={w} height={3} rx={1.5} fill="var(--mint)" />
       ))}
-      <text x={x + 70} y={318} className="cl-mono-m" fontSize={fs.tiny} fill="var(--muted)">sha256 a91f…c3</text>
+      <text x={x + 70} y={y + 132} className="cl-mono-m" fontSize={fs.tiny} fill="var(--muted)">sha256 a91f…c3</text>
 
       <g transform={`rotate(-8 ${sx} ${sy})`}>
         <circle cx={sx} cy={sy} r={15} fill="rgba(198,255,77,0.35)" stroke="var(--brand)" strokeWidth="1.4" />
@@ -249,7 +249,7 @@ function ProveCard({ x, y, fs }) {
           strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <circle className="cl-burst" cx={sx} cy={sy} r={15} fill="none" stroke="var(--brand)" strokeWidth="1.4" />
       </g>
-      <text x={x + 106} y={346} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--muted)">
+      <text x={x + 106} y={y + 160} className="cl-mono-m" fontSize={fs.tiny} textAnchor="middle" fill="var(--muted)">
         stamped · 4 frameworks
       </text>
     </CardFrame>
