@@ -179,18 +179,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DARK BAND */}
-      <section className="grain" style={{ position: 'relative', background: 'linear-gradient(135deg,var(--dark-band),var(--dark-band-2))', color: '#fff', textAlign: 'center', padding: '72px 0' }}>
-        <div className="wrap">
+      {/* CLOSING CTA — light, asymmetric: pitch left, walkthrough agenda right.
+          Deliberately NOT another dark band, so the footer owns the dark. */}
+      <section className="dotgrid grain" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(165deg, var(--mint) 0%, var(--canvas) 52%, var(--canvas) 100%)', padding: '84px 0 88px', borderTop: '1px solid var(--line)' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(540px 330px at 90% 6%, rgba(198,255,77,.30), transparent 65%), radial-gradient(440px 320px at 4% 96%, rgba(168,230,195,.55), transparent 62%)' }} />
+        <div className="wrap cta-grid" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 'clamp(30px,5vw,72px)', alignItems: 'center' }}>
           <Reveal>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.18em', color: 'var(--lime)' }}>● LIVE WALKTHROUGH — 20 MIN</div>
-            <h2 className="display" style={{ fontSize: 'clamp(36px,6vw,72px)', margin: '14px 0 12px' }}>Continuous cyber resilience.</h2>
-            <p style={{ color: 'rgba(255,255,255,.82)', margin: '0 0 24px', fontSize: 15 }}>Visibility · Automation · Assurance · Resilience — see NovrGRC in action.</p>
-            <Link to="/demo" className="btn-ghost" style={{ background: 'var(--lime)', borderColor: 'var(--lime)', fontWeight: 800 }}>Request a demo →</Link>
+            <span className="eyebrow-mono"><span className="live-dot" /> Live walkthrough — 20 min</span>
+            <h2 className="display" style={{ fontSize: 'clamp(34px,5vw,64px)', margin: '14px 0 14px', maxWidth: 560 }}>
+              Continuous cyber resilience.
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: 16, lineHeight: 1.65, maxWidth: 460, margin: '0 0 26px' }}>
+              Visibility · Automation · Assurance · Resilience — see NovrGRC running on your own risk register, not a sample dataset.
+            </p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+              <Link to="/demo" className="btn-primary" style={{ fontSize: 15, padding: '14px 30px' }}>Request a demo →</Link>
+              <Link to="/platform" className="btn-ghost">Explore the platform</Link>
+            </div>
+            <div style={{ marginTop: 24, paddingTop: 18, borderTop: '1px solid var(--line)', display: 'flex', gap: 22, flexWrap: 'wrap', fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--muted)' }}>
+              <a href="tel:+2348098120000" style={{ color: 'var(--brand-deep)', fontWeight: 700 }}>+234-809-812-0000</a>
+              <a href="mailto:grc@cybernovr.com" style={{ color: 'var(--brand-deep)', fontWeight: 700 }}>grc@cybernovr.com</a>
+              <span>Lagos · remote</span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="glass" style={{ padding: 26 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--brand-deep)' }}>
+                <span>What we&apos;ll cover</span>
+                <span style={{ background: 'var(--mint)', border: '1px solid var(--line)', borderRadius: 999, padding: '4px 11px', fontWeight: 700 }}>20 min</span>
+              </div>
+              <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 16 }}>
+                {[
+                  { n: '01', t: 'Your risk register, live', d: 'Taxonomy, heatmaps and KRIs running on your own data.' },
+                  { n: '02', t: 'A control test, run live', d: 'Automated evidence and Smart Mapping across CRF-NCS, CBN, NDPA and ISO 27001.' },
+                  { n: '03', t: 'A regulator-ready report', d: 'Board pack and filing generated in minutes, not weeks.' },
+                ].map((s) => (
+                  <div key={s.n} style={{ display: 'flex', gap: 14 }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 700, color: 'var(--brand-deep)', background: 'var(--mint)', border: '1px solid var(--line)', borderRadius: 8, width: 28, height: 28, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{s.n}</div>
+                    <div>
+                      <div style={{ fontSize: 14.5, fontWeight: 700 }}>{s.t}</div>
+                      <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.55, marginTop: 2 }}>{s.d}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 20, paddingTop: 14, borderTop: '1px solid var(--line)', fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)' }}>
+                No prep needed · remote or on-site
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
-      <style>{`@media(max-width:860px){ .story-grid,.bento-grid{ grid-template-columns:1fr !important } .bento-card{ height:200px !important } }`}</style>
+      <style>{`@media(max-width:860px){ .story-grid,.bento-grid{ grid-template-columns:1fr !important } .bento-card{ height:200px !important } .cta-grid{ grid-template-columns:1fr !important } }`}</style>
     </>
   )
 }
