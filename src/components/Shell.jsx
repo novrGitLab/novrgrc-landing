@@ -122,7 +122,9 @@ export default function Shell({ onDemoSubmit }) {
       <footer style={{ background: 'var(--dark-band)', color: '#C9D8D0', position: 'relative', zIndex: 1 }}>
         <div className="wrap" style={{ paddingTop: 48, paddingBottom: 24, display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', gap: 28 }}>
           <div>
-            <div style={{ color: '#fff', fontWeight: 800, fontSize: 18, marginBottom: 8 }}>NovrGRC</div>
+            <Link to="/" aria-label="NovrGRC — home" style={{ display: 'inline-flex', alignItems: 'center', marginBottom: 12 }}>
+              <img src="/novrgrc-logo.png" alt="NovrGRC by CyberNovr" style={{ height: 40, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
+            </Link>
             <div style={{ fontSize: 13 }}>By CyberNovr Limited — AI-driven GRC for service providers and regulators. Proudly Nigerian.</div>
             <div style={{ fontSize: 13, marginTop: 10 }}>+234-809-812-0000 · grc@cybernovr.com · www.novrgrc.com</div>
             <div style={{ marginTop: 18, paddingTop: 14, borderTop: '1px solid rgba(255,255,255,.14)' }}>
