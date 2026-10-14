@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
-import NetworkCanvas from '../components/NetworkCanvas'
+import ControlLoop from '../components/ControlLoop'
 import Marquee from '../components/Marquee'
 import { Reveal, MagneticButton } from '../components/fx'
 import { outcomes, grcTrio } from '../data/content'
@@ -29,47 +29,42 @@ function CountUp({ value, suffix }) {
 
 export default function Home() {
   const reduce = useReducedMotion()
-  const [canvasOn, setCanvasOn] = useState(true)
-  useEffect(() => {
-    // animation runs on all screen sizes now (loop is light: no particle
-    // system, dots pre-rendered offscreen); only reduced-motion disables it
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setCanvasOn(!mq.matches)
-    const onChange = () => setCanvasOn(!mq.matches)
-    mq.addEventListener?.('change', onChange)
-    return () => { mq.removeEventListener?.('change', onChange) }
-  }, [])
 
   return (
     <>
-      {/* HERO — split: text column left, live map pinned to viewport right */}
-      <section className="dotgrid grain hero-section" style={{ position: 'relative', overflow: 'hidden', padding: '72px 0 40px', minHeight: 620, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <div className="hero-map" style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: 'clamp(520px,54vw,880px)', height: 'min(88%,640px)' }}>
-          <NetworkCanvas animated={canvasOn && !reduce} anchor="right" />
-          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(90deg, var(--canvas) 0%, transparent 30%)' }} />
+      {/* HERO — copy on top, the live control-loop board full width beneath it */}
+      <section className="dotgrid grain hero-section" style={{ position: 'relative', overflow: 'hidden', padding: '72px 0 52px', minHeight: 620, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div className="wrap hero-copy" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+            <span className="eyebrow-mono"><span className="live-dot" /> AI-driven GRC — multi-tenant · cloud-native</span>
+          </motion.div>
+          <motion.h1
+            className="display"
+            initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            style={{ fontSize: 'clamp(44px,5.5vw,84px)', margin: '18px 0 0', maxWidth: 900 }}
+          >
+            See risk &<br />compliance clearly.
+          </motion.h1>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} style={{ color: 'var(--muted)', fontSize: 'clamp(15px,1.6vw,17px)', maxWidth: 560, margin: '20px 0 28px', lineHeight: 1.65 }}>
+            NovrGRC is an AI-driven, multi-tenant GRC platform for telecoms, banks, fintechs and insurers — and the regulators who oversee them. Automate risk, compliance and audit end-to-end, with real-time dashboards on cyber resilience maturity.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.28 }} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <MagneticButton>
+              <Link to="/demo" className="btn-primary" style={{ fontSize: 15, padding: '14px 30px' }}>Request a demo →</Link>
+            </MagneticButton>
+            <Link to="/framework" className="btn-ghost">See the framework</Link>
+          </motion.div>
         </div>
-        <div className="wrap hero-copy" style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}>
-          <div style={{ maxWidth: 560, padding: '24px 0', pointerEvents: 'none' }}>
-            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-              <span className="eyebrow-mono"><span className="live-dot" /> AI-driven GRC — multi-tenant · cloud-native</span>
-            </motion.div>
-            <motion.h1
-              className="display"
-              initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              style={{ fontSize: 'clamp(44px,5.5vw,84px)', margin: '18px 0 0' }}
-            >
-              See risk &<br />compliance clearly.
-            </motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} style={{ color: 'var(--muted)', fontSize: 'clamp(15px,1.6vw,17px)', maxWidth: '48ch', margin: '20px 0 28px', lineHeight: 1.65 }}>
-              NovrGRC is an AI-driven, multi-tenant GRC platform for telecoms, banks, fintechs and insurers — and the regulators who oversee them. Automate risk, compliance and audit end-to-end, with real-time dashboards on cyber resilience maturity.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.28 }} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <MagneticButton style={{ pointerEvents: 'auto' }}>
-                <Link to="/demo" className="btn-primary" style={{ fontSize: 15, padding: '14px 30px' }}>Request a demo →</Link>
-              </MagneticButton>
-              <Link to="/framework" className="btn-ghost" style={{ pointerEvents: 'auto' }}>See the framework</Link>
-            </motion.div>
-          </div>
+        <div className="wrap" style={{ marginTop: 46, position: 'relative', zIndex: 1 }}>
+          <motion.div className="loop-wrap" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}>
+            <ControlLoop />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }}
+            style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.08em', color: 'var(--muted)', textAlign: 'center', margin: '18px auto 0', maxWidth: '70ch' }}
+          >
+            CONTROLS MONITORED CONTINUOUSLY · DRIFT RE-SCORED · REMEDIATED · PROVEN — STEP THROUGH OR TAP A STAGE
+          </motion.p>
         </div>
       </section>
 
@@ -96,7 +91,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <style>{`@media(max-width:1024px){ section.hero-section{ padding:48px 0 32px !important; min-height:0 !important } section .hero-map{ position:relative !important; right:auto !important; top:auto !important; transform:none !important; width:100% !important; height:380px !important; margin-top:12px; order:2 } section .hero-copy{ order:1 } }`}</style>
+      <style>{`@media(max-width:1200px){ section.hero-section{ padding:48px 0 36px !important } }`}</style>
 
       <Marquee items={['CRF-NCS · CBN · NDPA · NCPS READY', 'ISO 27001 · NIST CSF · PCI DSS · CUSTOM', 'AI-DRIVEN · MULTI-TENANT · CLOUD-NATIVE']} />
 

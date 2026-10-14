@@ -50,3 +50,153 @@
   transform-origin: bottom;
 }
 .ticker-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Control Loop — the 4-across board needs width to stay legible. Below the
+   breakpoint the component flips to its 2×2 layout, and this wrapper caps that
+   stack so it reads as a centred panel instead of stretching edge to edge. */
+.loop-wrap { margin-inline: auto; }
+@media (max-width: 1000px) { .loop-wrap { max-width: 560px; } }
+
+/* Mapping Loom — instrument card + cell fill-in and thread draw animations */.loom {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px 14px;
+  will-change: transform;
+}
+.loom--compact { max-width: 520px; margin-inline: auto; }
+.loom--compact .loom-title { font-size: 9px; letter-spacing: 0.1em; gap: 6px; }
+.loom--compact .loom-count { font-size: 9.5px; padding: 3px 9px; letter-spacing: 0.06em; }
+.loom--compact .loom-head { gap: 8px; }
+.loom-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.loom-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.loom-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 4px rgba(22, 164, 107, 0.16);
+}
+.loom-count {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  background: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+.loom-track {
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: var(--mint);
+  overflow: hidden;
+}
+.loom-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand), var(--brand-deep));
+  transition: width 0.5s var(--ease);
+}
+.loom-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 14px;
+}
+.loom-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.loom-legend { display: inline-flex; align-items: center; gap: 5px; }
+.loom-legend b { font-weight: 700; margin-right: 3px; }
+.loom-meta { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.loom-hint { font-weight: 700; color: var(--brand-deep); white-space: nowrap; }
+.loom--compact .loom-foot { font-size: 9px; }
+.loom--compact .loom-legend b { display: none; }
+.loom-sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.loom-sw--1 { background: var(--mint); border-color: var(--line); }
+.loom-sw--2 { background: var(--soft-green); border-color: transparent; }
+.loom-sw--3 { background: var(--brand); border-color: transparent; }
+.loom-sw--4 { background: var(--brand-deep); border-color: transparent; }
+.loom-sample {
+  font-weight: 700;
+  color: var(--brand-deep);
+  background: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+@keyframes loom-cell-in {
+  from { opacity: 0; transform: scale(0.55); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes loom-thread-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+.loom-cell {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill 0.4s var(--ease), fill-opacity 0.4s var(--ease);
+}
+.loom-thread {
+  transition: stroke-opacity 0.45s var(--ease), stroke-width 0.45s var(--ease), filter 0.45s var(--ease);
+}
+.loom-cell--c0 { animation: loom-cell-in 0.22s var(--ease) 0ms both; }
+.loom-cell--c1 { animation: loom-cell-in 0.22s var(--ease) 60ms both; }
+.loom-cell--c2 { animation: loom-cell-in 0.22s var(--ease) 120ms both; }
+.loom-cell--c3 { animation: loom-cell-in 0.22s var(--ease) 180ms both; }
+.loom-cell--c4 { animation: loom-cell-in 0.22s var(--ease) 240ms both; }
+.loom-cell--c5 { animation: loom-cell-in 0.22s var(--ease) 300ms both; }
+.loom-thread--c0 { animation: loom-thread-draw 0.38s var(--ease) 0ms both; }
+.loom-thread--c1 { animation: loom-thread-draw 0.38s var(--ease) 30ms both; }
+.loom-thread--c2 { animation: loom-thread-draw 0.38s var(--ease) 60ms both; }
+.loom-thread--c3 { animation: loom-thread-draw 0.38s var(--ease) 90ms both; }
+.loom-thread--c4 { animation: loom-thread-draw 0.38s var(--ease) 120ms both; }
+.loom-thread--c5 { animation: loom-thread-draw 0.38s var(--ease) 150ms both; }
+@media (prefers-reduced-motion: reduce) {
+  .loom-cell--c0, .loom-cell--c1, .loom-cell--c2,
+  .loom-cell--c3, .loom-cell--c4, .loom-cell--c5,
+  .loom-thread--c0, .loom-thread--c1, .loom-thread--c2,
+  .loom-thread--c3, .loom-thread--c4, .loom-thread--c5 { animation: none; }
+}
