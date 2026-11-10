@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/favicon.png",
+      "destination": "https://cybergrc-origin.novrgrc.com/favicon.png"
+    },
+    {
       "source": "/api",
       "destination": "https://cybergrc-origin.novrgrc.com/api"
     },
