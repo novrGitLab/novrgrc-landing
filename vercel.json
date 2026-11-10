@@ -1,3 +1,392 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "https://cybergrc-origin.novrgrc.com/api"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/api/:path*"
+    },
+    {
+      "source": "/uploads",
+      "destination": "https://cybergrc-origin.novrgrc.com/uploads"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/uploads/:path*"
+    },
+    {
+      "source": "/cybergrc-assets",
+      "destination": "https://cybergrc-origin.novrgrc.com/cybergrc-assets"
+    },
+    {
+      "source": "/cybergrc-assets/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/cybergrc-assets/:path*"
+    },
+    {
+      "source": "/toc",
+      "destination": "https://cybergrc-origin.novrgrc.com/toc"
+    },
+    {
+      "source": "/toc/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/toc/:path*"
+    },
+    {
+      "source": "/nis",
+      "destination": "https://cybergrc-origin.novrgrc.com/nis"
+    },
+    {
+      "source": "/nis/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/nis/:path*"
+    },
+    {
+      "source": "/sign-in",
+      "destination": "https://cybergrc-origin.novrgrc.com/sign-in"
+    },
+    {
+      "source": "/sign-in/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/sign-in/:path*"
+    },
+    {
+      "source": "/register-service-provider",
+      "destination": "https://cybergrc-origin.novrgrc.com/register-service-provider"
+    },
+    {
+      "source": "/register-service-provider/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/register-service-provider/:path*"
+    },
+    {
+      "source": "/activate-provider",
+      "destination": "https://cybergrc-origin.novrgrc.com/activate-provider"
+    },
+    {
+      "source": "/activate-provider/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/activate-provider/:path*"
+    },
+    {
+      "source": "/maker-checker",
+      "destination": "https://cybergrc-origin.novrgrc.com/maker-checker"
+    },
+    {
+      "source": "/maker-checker/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/maker-checker/:path*"
+    },
+    {
+      "source": "/announcements",
+      "destination": "https://cybergrc-origin.novrgrc.com/announcements"
+    },
+    {
+      "source": "/announcements/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/announcements/:path*"
+    },
+    {
+      "source": "/icop",
+      "destination": "https://cybergrc-origin.novrgrc.com/icop"
+    },
+    {
+      "source": "/icop/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/icop/:path*"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "https://cybergrc-origin.novrgrc.com/dashboard"
+    },
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/dashboard/:path*"
+    },
+    {
+      "source": "/governance",
+      "destination": "https://cybergrc-origin.novrgrc.com/governance"
+    },
+    {
+      "source": "/governance/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/governance/:path*"
+    },
+    {
+      "source": "/standard-register",
+      "destination": "https://cybergrc-origin.novrgrc.com/standard-register"
+    },
+    {
+      "source": "/standard-register/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/standard-register/:path*"
+    },
+    {
+      "source": "/risk-register",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-register"
+    },
+    {
+      "source": "/risk-register/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-register/:path*"
+    },
+    {
+      "source": "/risk-heat-maps",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-heat-maps"
+    },
+    {
+      "source": "/risk-heat-maps/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-heat-maps/:path*"
+    },
+    {
+      "source": "/risk-movement",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-movement"
+    },
+    {
+      "source": "/risk-movement/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/risk-movement/:path*"
+    },
+    {
+      "source": "/compliance-register",
+      "destination": "https://cybergrc-origin.novrgrc.com/compliance-register"
+    },
+    {
+      "source": "/compliance-register/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/compliance-register/:path*"
+    },
+    {
+      "source": "/ncc-dashboard",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-dashboard"
+    },
+    {
+      "source": "/ncc-dashboard/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-dashboard/:path*"
+    },
+    {
+      "source": "/ncc-leaderboard",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-leaderboard"
+    },
+    {
+      "source": "/ncc-leaderboard/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-leaderboard/:path*"
+    },
+    {
+      "source": "/ncc-sp-directory",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-sp-directory"
+    },
+    {
+      "source": "/ncc-sp-directory/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-sp-directory/:path*"
+    },
+    {
+      "source": "/ncc-thematic",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-thematic"
+    },
+    {
+      "source": "/ncc-thematic/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-thematic/:path*"
+    },
+    {
+      "source": "/ncc-enforcement",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-enforcement"
+    },
+    {
+      "source": "/ncc-enforcement/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/ncc-enforcement/:path*"
+    },
+    {
+      "source": "/sp-dashboard",
+      "destination": "https://cybergrc-origin.novrgrc.com/sp-dashboard"
+    },
+    {
+      "source": "/sp-dashboard/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/sp-dashboard/:path*"
+    },
+    {
+      "source": "/assessment-catalog",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-catalog"
+    },
+    {
+      "source": "/assessment-catalog/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-catalog/:path*"
+    },
+    {
+      "source": "/assessment-catalog-overview",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-catalog-overview"
+    },
+    {
+      "source": "/assessment-catalog-overview/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-catalog-overview/:path*"
+    },
+    {
+      "source": "/self-assessment",
+      "destination": "https://cybergrc-origin.novrgrc.com/self-assessment"
+    },
+    {
+      "source": "/self-assessment/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/self-assessment/:path*"
+    },
+    {
+      "source": "/assessment-score",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-score"
+    },
+    {
+      "source": "/assessment-score/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessment-score/:path*"
+    },
+    {
+      "source": "/frameworks",
+      "destination": "https://cybergrc-origin.novrgrc.com/frameworks"
+    },
+    {
+      "source": "/frameworks/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/frameworks/:path*"
+    },
+    {
+      "source": "/control-catalog",
+      "destination": "https://cybergrc-origin.novrgrc.com/control-catalog"
+    },
+    {
+      "source": "/control-catalog/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/control-catalog/:path*"
+    },
+    {
+      "source": "/control-mapping",
+      "destination": "https://cybergrc-origin.novrgrc.com/control-mapping"
+    },
+    {
+      "source": "/control-mapping/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/control-mapping/:path*"
+    },
+    {
+      "source": "/assessments",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessments"
+    },
+    {
+      "source": "/assessments/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/assessments/:path*"
+    },
+    {
+      "source": "/controls",
+      "destination": "https://cybergrc-origin.novrgrc.com/controls"
+    },
+    {
+      "source": "/controls/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/controls/:path*"
+    },
+    {
+      "source": "/simulations",
+      "destination": "https://cybergrc-origin.novrgrc.com/simulations"
+    },
+    {
+      "source": "/simulations/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/simulations/:path*"
+    },
+    {
+      "source": "/incidents",
+      "destination": "https://cybergrc-origin.novrgrc.com/incidents"
+    },
+    {
+      "source": "/incidents/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/incidents/:path*"
+    },
+    {
+      "source": "/reports",
+      "destination": "https://cybergrc-origin.novrgrc.com/reports"
+    },
+    {
+      "source": "/reports/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/reports/:path*"
+    },
+    {
+      "source": "/tasks",
+      "destination": "https://cybergrc-origin.novrgrc.com/tasks"
+    },
+    {
+      "source": "/tasks/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/tasks/:path*"
+    },
+    {
+      "source": "/audit-logs",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit-logs"
+    },
+    {
+      "source": "/audit-logs/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit-logs/:path*"
+    },
+    {
+      "source": "/settings",
+      "destination": "https://cybergrc-origin.novrgrc.com/settings"
+    },
+    {
+      "source": "/settings/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/settings/:path*"
+    },
+    {
+      "source": "/users",
+      "destination": "https://cybergrc-origin.novrgrc.com/users"
+    },
+    {
+      "source": "/users/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/users/:path*"
+    },
+    {
+      "source": "/role-permissions",
+      "destination": "https://cybergrc-origin.novrgrc.com/role-permissions"
+    },
+    {
+      "source": "/role-permissions/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/role-permissions/:path*"
+    },
+    {
+      "source": "/service-provider-tiering",
+      "destination": "https://cybergrc-origin.novrgrc.com/service-provider-tiering"
+    },
+    {
+      "source": "/service-provider-tiering/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/service-provider-tiering/:path*"
+    },
+    {
+      "source": "/platform/subscriptions",
+      "destination": "https://cybergrc-origin.novrgrc.com/platform/subscriptions"
+    },
+    {
+      "source": "/platform/subscriptions/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/platform/subscriptions/:path*"
+    },
+    {
+      "source": "/message-templates",
+      "destination": "https://cybergrc-origin.novrgrc.com/message-templates"
+    },
+    {
+      "source": "/message-templates/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/message-templates/:path*"
+    },
+    {
+      "source": "/lookup-data",
+      "destination": "https://cybergrc-origin.novrgrc.com/lookup-data"
+    },
+    {
+      "source": "/lookup-data/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/lookup-data/:path*"
+    },
+    {
+      "source": "/remediation",
+      "destination": "https://cybergrc-origin.novrgrc.com/remediation"
+    },
+    {
+      "source": "/remediation/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/remediation/:path*"
+    },
+    {
+      "source": "/audit",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit"
+    },
+    {
+      "source": "/audit/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit/:path*"
+    },
+    {
+      "source": "/audit-overview",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit-overview"
+    },
+    {
+      "source": "/audit-overview/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/audit-overview/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

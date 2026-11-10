@@ -100,6 +100,7 @@ export default function Shell({ onDemoSubmit }) {
             ))}
           </nav>
           <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            <a href="/sign-in" className="btn btn-outline btn-sm">Sign in</a>
             <Link to="/demo" className="btn-primary nav-cta-demo">Request a demo</Link>
             <button className="hamburger" aria-label="Menu" onClick={() => setOpen(v => !v)}>{open ? '✕' : '☰'}</button>
           </div>
@@ -108,6 +109,7 @@ export default function Shell({ onDemoSubmit }) {
           <div style={{ padding: '12px 24px 20px', display: 'flex', flexDirection: 'column', gap: 12, background: '#fff', borderTop: '1px solid var(--line)' }}>
             <Link to="/" onClick={() => setOpen(false)}>Home</Link>
             {links.map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>)}
+            <a href="/sign-in">Sign in</a>
             <Link to="/demo" onClick={() => setOpen(false)} className="btn-primary" style={{ textAlign: 'center' }}>Request a demo</Link>
           </div>
         )}
