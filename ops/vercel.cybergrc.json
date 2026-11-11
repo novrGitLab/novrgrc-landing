@@ -149,6 +149,22 @@
       "destination": "https://cybergrc-origin.novrgrc.com/compliance-register/:path*"
     },
     {
+      "source": "/sector-overview",
+      "destination": "https://cybergrc-origin.novrgrc.com/sector-overview"
+    },
+    {
+      "source": "/sector-overview/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/sector-overview/:path*"
+    },
+    {
+      "source": "/provider-reviews",
+      "destination": "https://cybergrc-origin.novrgrc.com/provider-reviews"
+    },
+    {
+      "source": "/provider-reviews/:path*",
+      "destination": "https://cybergrc-origin.novrgrc.com/provider-reviews/:path*"
+    },
+    {
       "source": "/ncc-dashboard",
       "destination": "https://cybergrc-origin.novrgrc.com/ncc-dashboard"
     },
